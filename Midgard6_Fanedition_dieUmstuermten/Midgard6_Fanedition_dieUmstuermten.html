@@ -1,0 +1,1790 @@
+<div id="m6body">
+<input type="radio" class="sheet-tab" name="sheet-tabs" id="sheet-tab1" checked>
+<input type="radio" class="sheet-tab" name="sheet-tabs" id="sheet-tab2">
+<input type="radio" class="sheet-tab" name="sheet-tabs" id="sheet-tab3">
+<input type="radio" class="sheet-tab" name="sheet-tabs" id="sheet-tab4">
+<input type="radio" class="sheet-tab" name="sheet-tabs" id="sheet-tab5">
+<!-- NPC-Modus Trigger: Sibling vor den Pages, von CSS ausgewertet -->
+<input type="checkbox" class="npc-mode-trigger" name="attr_npc_modus" value="1">
+
+<!-- Globale Attribute -->
+<input type="hidden" name="attr_wurf_modus_label" value="Normal">
+<input type="hidden" name="attr_npc_w3_modus" value="1d3">
+
+
+<div class="vn-bar">
+  <span class="vn-bar-label"><svg width="12" height="12" viewBox="0 0 12 12" class="vn-dice-icon"><rect x="1" y="1" width="10" height="10" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="3.5" cy="3.5" r=".9" fill="currentColor"/><circle cx="8.5" cy="8.5" r=".9" fill="currentColor"/><circle cx="8.5" cy="3.5" r=".9" fill="currentColor"/><circle cx="3.5" cy="8.5" r=".9" fill="currentColor"/><circle cx="6" cy="6" r=".9" fill="currentColor"/></svg> WÜRFELMODUS</span>
+  <div class="vn-pills">
+    <input type="radio" class="vn-radio" name="attr_wurf_modus" id="vn_nachteil" value="{1d20,1d20}kl1">
+    <label for="vn_nachteil" class="vn-pill vn-pill-nachteil">&#x25BC; Nachteil</label>
+    <input type="radio" class="vn-radio" name="attr_wurf_modus" id="vn_normal" value="1d20" checked>
+    <label for="vn_normal" class="vn-pill vn-pill-normal"><svg width="9" height="9" viewBox="0 0 8 8"><rect x="1.5" y="1.5" width="5" height="5" rx="1" fill="#6a5a48"/></svg>Normal</label>
+    <input type="radio" class="vn-radio" name="attr_wurf_modus" id="vn_vorteil" value="{1d20,1d20}k1">
+    <label for="vn_vorteil" class="vn-pill vn-pill-vorteil">&#x25B2; Vorteil</label>
+  </div>
+</div>
+
+<div class="sheet-tabs-row">
+  <label class="sheet-tab-label" for="sheet-tab1">Main</label>
+  <label class="sheet-tab-label" for="sheet-tab2">Hintergrund</label>
+  <label class="sheet-tab-label" for="sheet-tab3">Zauber</label>
+  <label class="sheet-tab-label" for="sheet-tab4">Notizen</label>
+  <label class="sheet-tab-label sheet-tab-label--npc" for="sheet-tab5">NPC</label>
+</div>
+
+
+<!-- PAGE 1: MAIN -->
+<div class="sheet-page" id="sheet-page1">
+
+  <div class="char-header">
+    <div class="char-header-left">
+      <div class="header-line"><span>Name:</span><input type="text" spellcheck="false" name="attr_name"></div>
+      <div class="header-line"><span>Spezies:</span><input type="text" spellcheck="false" name="attr_spezies"></div>
+      <div class="header-line"><span>Kultur:</span><input type="text" spellcheck="false" name="attr_kultur"></div>
+    </div>
+    <div class="char-header-center">&#x1F409;</div>
+    <div class="char-header-right">
+      <div class="header-line"><span>Abenteurertyp:</span><input type="text" spellcheck="false" name="attr_abenteurertyp"></div>
+      <div class="header-line"><span>Glaube:</span><input type="text" spellcheck="false" name="attr_glaube"></div>
+      <div class="header-line"><span>Mondgestalt:</span><input type="text" spellcheck="false" name="attr_mondgestalt"></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="gm-header">
+      <span class="gm-header-left">GUNST</span>
+      <span class="gm-header-right">MAKEL</span>
+    </div>
+    <div class="gunst-makel">
+      <div class="gm-rows">
+        <div class="gm-row"><div><textarea spellcheck="false" name="attr_gunst_name_1" class="spez-text2"></textarea></div><div><textarea spellcheck="false" name="attr_gunst_wert_1" class="spez-text2"></textarea></div></div>
+
+        <div class="gm-row"><div><textarea spellcheck="false" name="attr_gunst_name_2" class="spez-text2"></textarea></div><div><textarea spellcheck="false" name="attr_gunst_wert_2" class="spez-text2"></textarea></div></div>
+
+        <div class="gm-row"><div><textarea spellcheck="false" name="attr_gunst_name_3" class="spez-text2"></textarea></div><div><textarea spellcheck="false" name="attr_gunst_wert_3" class="spez-text2"></textarea></div></div>
+
+        <div class="gm-row"><div><textarea spellcheck="false" name="attr_gunst_name_4" class="spez-text2"></textarea></div><div><textarea spellcheck="false" name="attr_gunst_wert_4" class="spez-text2"></textarea></div></div>
+      </div>
+      <div class="gm-divider"></div>
+      <div class="gm-rows">
+        <div class="gm-row"><div><textarea spellcheck="false" name="attr_makel_name_1" class="spez-text2"></textarea></div><div><textarea spellcheck="false" name="attr_makel_wert_1" class="spez-text2"></textarea></div></div>
+
+        <div class="gm-row"><div><textarea spellcheck="false" name="attr_makel_name_2" class="spez-text2"></textarea></div><div><textarea spellcheck="false" name="attr_makel_wert_2" class="spez-text2"></textarea></div></div>
+
+        <div class="gm-row"><div><textarea spellcheck="false" name="attr_makel_name_3" class="spez-text2"></textarea></div><div><textarea spellcheck="false" name="attr_makel_wert_3" class="spez-text2"></textarea></div></div>
+
+        <div class="gm-row"><div><textarea spellcheck="false" name="attr_makel_name_4" class="spez-text2"></textarea></div><div><textarea spellcheck="false" name="attr_makel_wert_4" class="spez-text2"></textarea></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lp-ap-grid">
+    <div class="lp-ap-header-row">
+      <div class="lp-ap-th lp-ap-th-lp">LP</div>
+      <div class="lp-ap-th lp-ap-th-ap">AP</div>
+      <div class="lp-ap-th lp-ap-th-res">RESISTENZEN</div>
+    </div>
+    <div class="lp-ap-content">
+      <div class="lp-ap-td lp-ap-checks">
+        <div class="cb-row"><input type="checkbox" name="attr_verwundet" value="1"> Verwundet</div>
+        <div class="cb-row"><input type="checkbox" name="attr_todlich_verwundet" value="1"> Tödlich verw.</div>
+      </div>
+      <div class="lp-ap-td lp-ap-vals lp-ap-td-divider">
+        <input type="text" spellcheck="false" name="attr_lp" placeholder="—" class="lp-ap-input">
+        <span class="lp-ap-sep">/</span>
+        <input type="text" spellcheck="false" name="attr_lp_max" placeholder="max" class="lp-ap-input lp-ap-input--transparent"> LP max.
+      </div>
+      <div class="lp-ap-td lp-ap-checks">
+        <div class="cb-row"><input type="checkbox" name="attr_erschopft" value="1"> Erschöpft</div>
+        <div class="cb-row">
+          <input type="checkbox" name="attr_durchatmen_1" value="1">
+          <input type="checkbox" name="attr_durchatmen_2" value="1">
+          <input type="checkbox" name="attr_durchatmen_3" value="1">
+          Durchatmen
+        </div>
+      </div>
+      <div class="lp-ap-td lp-ap-vals lp-ap-td-divider">
+        <input type="text" spellcheck="false" name="attr_ap" placeholder="—" class="lp-ap-input">
+        <span class="lp-ap-sep">/</span>
+        <input type="text" spellcheck="false" name="attr_ap_max" placeholder="max" class="lp-ap-input lp-ap-input--transparent"> AP max.
+      </div>
+      <div class="lp-ap-resistenzen">
+        <div class="lp-ap-icon-row">
+          <div class="lp-ap-icon-cell">&#x26A1;&#xFE0F;</div>
+          <div class="lp-ap-icon-cell">&#x1F4AA;</div>
+          <div class="lp-ap-icon-cell">&#x1F9E0;</div>
+        </div>
+        <div class="lp-ap-fert-row">
+          <div class="lp-ap-fert-cell">
+            <div class="fert-item">
+              <span>Reflexe</span>
+              <input type="text" spellcheck="false" name="attr_resist_reflexe">
+              <button type="roll" name="roll_resist_reflexe" value="&{template:default} {{name=&#x26A1;&#xFE0F; Reflexe — @{name}}} {{Modus=@{wurf_modus_label}}} {{Würfelwurf=[[@{wurf_modus}+@{resist_reflexe}]]}} {{Resistenz=@{resist_reflexe}}}" class="dice-btn"></button>
+            </div>
+          </div>
+          <div class="lp-ap-fert-cell">
+            <div class="fert-item">
+              <span>Zähigkeit</span>
+              <input type="text" spellcheck="false" name="attr_resist_zahigkeit">
+              <button type="roll" name="roll_resist_zahigkeit" value="&{template:default} {{name=&#x1F4AA; Zähigkeit — @{name}}} {{Modus=@{wurf_modus_label}}} {{Würfelwurf=[[@{wurf_modus}+@{resist_zahigkeit}]]}} {{Resistenz=@{resist_zahigkeit}}}" class="dice-btn"></button>
+            </div>
+          </div>
+          <div class="lp-ap-fert-cell">
+            <div class="fert-item">
+              <span>Willenskraft</span>
+              <input type="text" spellcheck="false" name="attr_resist_willenskraft">
+              <button type="roll" name="roll_resist_willenskraft" value="&{template:default} {{name=&#x1F9E0; Willenskraft — @{name}}} {{Modus=@{wurf_modus_label}}} {{Würfelwurf=[[@{wurf_modus}+@{resist_willenskraft}]]}} {{Resistenz=@{resist_willenskraft}}}" class="dice-btn"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="section-title">FERTIGKEITEN</div>
+    <div class="fert-cols">
+
+      <div class="fert-col">
+        <div class="fert-icon">&#x2694;&#xFE0F;</div>
+        <div class="fert-items-inner">
+
+          <div class="fert-item">
+            <span>Anführen</span>
+            <input type="text" spellcheck="false" name="attr_fert_anfuhren">
+            <button type="roll" name="roll_fert_anfuhren" value="&{template:default} {{name=&#x2694;&#xFE0F; Anführen — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_anfuhren}]]}} {{Fertigkeitswert=@{fert_anfuhren}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Fernkampf</span>
+            <input type="text" spellcheck="false" name="attr_fert_fernkampf">
+            <button type="roll" name="roll_fert_fernkampf" value="&{template:default} {{name=&#x2694;&#xFE0F; Fernkampf — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_fernkampf}]]}} {{Fertigkeitswert=@{fert_fernkampf}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Handgemenge</span>
+            <input type="text" spellcheck="false" name="attr_fert_handgemenge">
+            <button type="roll" name="roll_fert_handgemenge" value="&{template:default} {{name=&#x2694;&#xFE0F; Handgemenge — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_handgemenge}]]}} {{Fertigkeitswert=@{fert_handgemenge}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Nahkampf</span>
+            <input type="text" spellcheck="false" name="attr_fert_nahkampf">
+            <button type="roll" name="roll_fert_nahkampf" value="&{template:default} {{name=&#x2694;&#xFE0F; Nahkampf — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_nahkampf}]]}} {{Fertigkeitswert=@{fert_nahkampf}}} " class="dice-btn"></button>
+          </div>
+        </div>
+      </div>
+      <div class="fert-col">
+        <div class="fert-icon">&#x1F3C3;</div>
+        <div class="fert-items-inner">
+
+          <div class="fert-item">
+            <span>Athletik</span>
+            <input type="text" spellcheck="false" name="attr_fert_athletik">
+            <button type="roll" name="roll_fert_athletik" value="&{template:default} {{name=&#x1F3C3; Athletik — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_athletik}]]}} {{Fertigkeitswert=@{fert_athletik}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Beweglichkeit</span>
+            <input type="text" spellcheck="false" name="attr_fert_beweglichkeit">
+            <button type="roll" name="roll_fert_beweglichkeit" value="&{template:default} {{name=&#x1F3C3; Beweglichkeit — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_beweglichkeit}]]}} {{Fertigkeitswert=@{fert_beweglichkeit}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Fingerfertigkeit</span>
+            <input type="text" spellcheck="false" name="attr_fert_fingerfertigkeit">
+            <button type="roll" name="roll_fert_fingerfertigkeit" value="&{template:default} {{name=&#x1F3C3; Fingerfertigkeit — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_fingerfertigkeit}]]}} {{Fertigkeitswert=@{fert_fingerfertigkeit}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Heimlichkeit</span>
+            <input type="text" spellcheck="false" name="attr_fert_heimlichkeit">
+            <button type="roll" name="roll_fert_heimlichkeit" value="&{template:default} {{name=&#x1F3C3; Heimlichkeit — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_heimlichkeit}]]}} {{Fertigkeitswert=@{fert_heimlichkeit}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Kraftakt</span>
+            <input type="text" spellcheck="false" name="attr_fert_kraftakt">
+            <button type="roll" name="roll_fert_kraftakt" value="&{template:default} {{name=&#x1F3C3; Kraftakt — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_kraftakt}]]}} {{Fertigkeitswert=@{fert_kraftakt}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Wahrnehmung</span>
+            <input type="text" spellcheck="false" name="attr_fert_wahrnehmung">
+            <button type="roll" name="roll_fert_wahrnehmung" value="&{template:default} {{name=&#x1F3C3; Wahrnehmung — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_wahrnehmung}]]}} {{Fertigkeitswert=@{fert_wahrnehmung}}} " class="dice-btn"></button>
+          </div>
+        </div>
+      </div>
+      <div class="fert-col">
+        <div class="fert-icon">&#x1F4AC;</div>
+        <div class="fert-items-inner">
+
+          <div class="fert-item">
+            <span>Darbietung</span>
+            <input type="text" spellcheck="false" name="attr_fert_darbietung">
+            <button type="roll" name="roll_fert_darbietung" value="&{template:default} {{name=&#x1F4AC; Darbietung — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_darbietung}]]}} {{Fertigkeitswert=@{fert_darbietung}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Einschüchterung</span>
+            <input type="text" spellcheck="false" name="attr_fert_einschuchterung">
+            <button type="roll" name="roll_fert_einschuchterung" value="&{template:default} {{name=&#x1F4AC; Einschüchterung — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_einschuchterung}]]}} {{Fertigkeitswert=@{fert_einschuchterung}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Empathie</span>
+            <input type="text" spellcheck="false" name="attr_fert_empathie">
+            <button type="roll" name="roll_fert_empathie" value="&{template:default} {{name=&#x1F4AC; Empathie — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_empathie}]]}} {{Fertigkeitswert=@{fert_empathie}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Gassenwissen</span>
+            <input type="text" spellcheck="false" name="attr_fert_gassenwissen">
+            <button type="roll" name="roll_fert_gassenwissen" value="&{template:default} {{name=&#x1F4AC; Gassenwissen — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_gassenwissen}]]}} {{Fertigkeitswert=@{fert_gassenwissen}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Manipulation</span>
+            <input type="text" spellcheck="false" name="attr_fert_manipulation">
+            <button type="roll" name="roll_fert_manipulation" value="&{template:default} {{name=&#x1F4AC; Manipulation — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_manipulation}]]}} {{Fertigkeitswert=@{fert_manipulation}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Überzeugen</span>
+            <input type="text" spellcheck="false" name="attr_fert_uberzeugen">
+            <button type="roll" name="roll_fert_uberzeugen" value="&{template:default} {{name=&#x1F4AC; Überzeugen — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_uberzeugen}]]}} {{Fertigkeitswert=@{fert_uberzeugen}}} " class="dice-btn"></button>
+          </div>
+        </div>
+      </div>
+      <div class="fert-col">
+        <div class="fert-icon">&#x1F4D6;</div>
+        <div class="fert-items-inner">
+
+          <div class="fert-item">
+            <span>Bildung</span>
+            <input type="text" spellcheck="false" name="attr_fert_bildung">
+            <button type="roll" name="roll_fert_bildung" value="&{template:default} {{name=&#x1F4D6; Bildung — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_bildung}]]}} {{Fertigkeitswert=@{fert_bildung}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Handwerk</span>
+            <input type="text" spellcheck="false" name="attr_fert_handwerk">
+            <button type="roll" name="roll_fert_handwerk" value="&{template:default} {{name=&#x1F4D6; Handwerk — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_handwerk}]]}} {{Fertigkeitswert=@{fert_handwerk}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Heilkunst</span>
+            <input type="text" spellcheck="false" name="attr_fert_heilkunst">
+            <button type="roll" name="roll_fert_heilkunst" value="&{template:default} {{name=&#x1F4D6; Heilkunst — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_heilkunst}]]}} {{Fertigkeitswert=@{fert_heilkunst}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Kulturwissen</span>
+            <input type="text" spellcheck="false" name="attr_fert_kulturwissen">
+            <button type="roll" name="roll_fert_kulturwissen" value="&{template:default} {{name=&#x1F4D6; Kulturwissen — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_kulturwissen}]]}} {{Fertigkeitswert=@{fert_kulturwissen}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Tierführung</span>
+            <input type="text" spellcheck="false" name="attr_fert_tierfuhrung">
+            <button type="roll" name="roll_fert_tierfuhrung" value="&{template:default} {{name=&#x1F4D6; Tierführung — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_tierfuhrung}]]}} {{Fertigkeitswert=@{fert_tierfuhrung}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Überlebenskunst</span>
+            <input type="text" spellcheck="false" name="attr_fert_uberlebenskunst">
+            <button type="roll" name="roll_fert_uberlebenskunst" value="&{template:default} {{name=&#x1F4D6; Überlebenskunst — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_uberlebenskunst}]]}} {{Fertigkeitswert=@{fert_uberlebenskunst}}} " class="dice-btn"></button>
+          </div>
+        </div>
+      </div>
+      <div class="fert-col">
+        <div class="fert-icon">&#x2728;&#xFE0F;</div>
+        <div class="fert-items-inner">
+
+          <div class="fert-item">
+            <span>Zaubern</span>
+            <input type="text" spellcheck="false" name="attr_fert_zaubern">
+            <button type="roll" name="roll_fert_zaubern" value="&{template:default} {{name=&#x2728;&#xFE0F; Zaubern — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}]]}} {{Fertigkeitswert=@{fert_zaubern}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Zauberwerk</span>
+            <input type="text" spellcheck="false" name="attr_fert_zauberwerk">
+            <button type="roll" name="roll_fert_zauberwerk" value="&{template:default} {{name=&#x2728;&#xFE0F; Zauberwerk — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zauberwerk}]]}} {{Fertigkeitswert=@{fert_zauberwerk}}} " class="dice-btn"></button>
+          </div>
+          <div class="fert-item">
+            <span>Zauberwissen</span>
+            <input type="text" spellcheck="false" name="attr_fert_zauberwissen">
+            <button type="roll" name="roll_fert_zauberwissen" value="&{template:default} {{name=&#x2728;&#xFE0F; Zauberwissen — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zauberwissen}]]}} {{Fertigkeitswert=@{fert_zauberwissen}}} " class="dice-btn"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="section-title">SPEZIALISIERUNGEN</div>
+    <div class="section-inner">
+      <table class="spez-table">
+        <thead>
+          <tr>
+            <th>Fertigkeit</th>
+            <th>Kampf-Spezialisierung</th>
+            <th class="th-spez-stufe">Stufe</th>
+            <th class="th-spez-ew">EW</th>
+            <th class="th-spez-roll"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td><select name="attr_spez_1_fertigkeit" class="spez-fert-select">
+              <option value=""></option>
+                <option value="" disabled>── &#x2694;&#xFE0F; Kampf ──</option>
+                <option value="fert_anfuhren">  Anführen</option>
+                <option value="fert_fernkampf">  Fernkampf</option>
+                <option value="fert_handgemenge">  Handgemenge</option>
+                <option value="fert_nahkampf">  Nahkampf</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_1_name" placeholder="Spezialisierung"></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_1_stufe"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_spez_1_ew" readonly="true" tabindex="-1"></div></td>
+            <td><button type="roll" name="roll_spez_1" value="&{template:default} {{name=&#x1F393; @{spez_1_name} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{spez_1_ew}]]}}" class="dice-btn"></button></td>
+          </tr>
+
+          <tr>
+            <td><select name="attr_spez_2_fertigkeit" class="spez-fert-select">
+              <option value=""></option>
+                <option value="" disabled>── &#x2694;&#xFE0F; Kampf ──</option>
+                <option value="fert_anfuhren">  Anführen</option>
+                <option value="fert_fernkampf">  Fernkampf</option>
+                <option value="fert_handgemenge">  Handgemenge</option>
+                <option value="fert_nahkampf">  Nahkampf</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_2_name" placeholder="Spezialisierung"></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_2_stufe"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_spez_2_ew" readonly="true" tabindex="-1"></div></td>
+            <td><button type="roll" name="roll_spez_2" value="&{template:default} {{name=&#x1F393; @{spez_2_name} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{spez_2_ew}]]}}" class="dice-btn"></button></td>
+          </tr>
+
+          <tr>
+            <td><select name="attr_spez_3_fertigkeit" class="spez-fert-select">
+              <option value=""></option>
+                <option value="" disabled>── &#x2694;&#xFE0F; Kampf ──</option>
+                <option value="fert_anfuhren">  Anführen</option>
+                <option value="fert_fernkampf">  Fernkampf</option>
+                <option value="fert_handgemenge">  Handgemenge</option>
+                <option value="fert_nahkampf">  Nahkampf</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_3_name" placeholder="Spezialisierung"></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_3_stufe"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_spez_3_ew" readonly="true" tabindex="-1"></div></td>
+            <td><button type="roll" name="roll_spez_3" value="&{template:default} {{name=&#x1F393; @{spez_3_name} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{spez_3_ew}]]}}" class="dice-btn"></button></td>
+          </tr>
+
+          <tr>
+            <td><select name="attr_spez_4_fertigkeit" class="spez-fert-select">
+              <option value=""></option>
+                <option value="" disabled>── &#x2694;&#xFE0F; Kampf ──</option>
+                <option value="fert_anfuhren">  Anführen</option>
+                <option value="fert_fernkampf">  Fernkampf</option>
+                <option value="fert_handgemenge">  Handgemenge</option>
+                <option value="fert_nahkampf">  Nahkampf</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_4_name" placeholder="Spezialisierung"></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_4_stufe"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_spez_4_ew" readonly="true" tabindex="-1"></div></td>
+            <td><button type="roll" name="roll_spez_4" value="&{template:default} {{name=&#x1F393; @{spez_4_name} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{spez_4_ew}]]}}" class="dice-btn"></button></td>
+          </tr>
+
+          <tr>
+            <td><select name="attr_spez_5_fertigkeit" class="spez-fert-select">
+              <option value=""></option>
+                <option value="" disabled>── &#x2694;&#xFE0F; Kampf ──</option>
+                <option value="fert_anfuhren">  Anführen</option>
+                <option value="fert_fernkampf">  Fernkampf</option>
+                <option value="fert_handgemenge">  Handgemenge</option>
+                <option value="fert_nahkampf">  Nahkampf</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_5_name" placeholder="Spezialisierung"></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_5_stufe"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_spez_5_ew" readonly="true" tabindex="-1"></div></td>
+            <td><button type="roll" name="roll_spez_5" value="&{template:default} {{name=&#x1F393; @{spez_5_name} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{spez_5_ew}]]}}" class="dice-btn"></button></td>
+          </tr>
+          <tr class="spez-subheader">
+            <th>Fertigkeit</th>
+            <th>Spezialisierung</th>
+            <th class="th-spez-stufe">Stufe</th>
+            <th class="th-spez-ew">EW</th>
+            <th class="th-spez-roll"></th>
+          </tr>
+
+          <tr>
+            <td><select name="attr_spez_6_fertigkeit" class="spez-fert-select">
+              <option value=""></option>
+                <option value="" disabled>── &#x1F3C3; Körper ──</option>
+                <option value="fert_athletik">  Athletik</option>
+                <option value="fert_beweglichkeit">  Beweglichkeit</option>
+                <option value="fert_fingerfertigkeit">  Fingerfertigkeit</option>
+                <option value="fert_heimlichkeit">  Heimlichkeit</option>
+                <option value="fert_kraftakt">  Kraftakt</option>
+                <option value="fert_wahrnehmung">  Wahrnehmung</option>
+                <option value="" disabled>── &#x1F4AC; Sozial ──</option>
+                <option value="fert_darbietung">  Darbietung</option>
+                <option value="fert_einschuchterung">  Einschüchterung</option>
+                <option value="fert_empathie">  Empathie</option>
+                <option value="fert_gassenwissen">  Gassenwissen</option>
+                <option value="fert_manipulation">  Manipulation</option>
+                <option value="fert_uberzeugen">  Überzeugen</option>
+                <option value="" disabled>── &#x1F4D6; Wissen ──</option>
+                <option value="fert_bildung">  Bildung</option>
+                <option value="fert_handwerk">  Handwerk</option>
+                <option value="fert_heilkunst">  Heilkunst</option>
+                <option value="fert_kulturwissen">  Kulturwissen</option>
+                <option value="fert_tierfuhrung">  Tierführung</option>
+                <option value="fert_uberlebenskunst">  Überlebenskunst</option>
+                <option value="" disabled>── &#x2728;&#xFE0F; Zauber ──</option>
+                <option value="fert_zaubern">  Zaubern</option>
+                <option value="fert_zauberwerk">  Zauberwerk</option>
+                <option value="fert_zauberwissen">  Zauberwissen</option>
+
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_6_name" placeholder="Spezialisierung"></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_6_stufe"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_spez_6_ew" readonly="true" tabindex="-1"></div></td>
+            <td><button type="roll" name="roll_spez_6" value="&{template:default} {{name=&#x1F393; @{spez_6_name} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{spez_6_ew}]]}}" class="dice-btn"></button></td>
+          </tr>
+
+          <tr>
+            <td><select name="attr_spez_7_fertigkeit" class="spez-fert-select">
+              <option value=""></option>
+                <option value="" disabled>── &#x1F3C3; Körper ──</option>
+                <option value="fert_athletik">  Athletik</option>
+                <option value="fert_beweglichkeit">  Beweglichkeit</option>
+                <option value="fert_fingerfertigkeit">  Fingerfertigkeit</option>
+                <option value="fert_heimlichkeit">  Heimlichkeit</option>
+                <option value="fert_kraftakt">  Kraftakt</option>
+                <option value="fert_wahrnehmung">  Wahrnehmung</option>
+                <option value="" disabled>── &#x1F4AC; Sozial ──</option>
+                <option value="fert_darbietung">  Darbietung</option>
+                <option value="fert_einschuchterung">  Einschüchterung</option>
+                <option value="fert_empathie">  Empathie</option>
+                <option value="fert_gassenwissen">  Gassenwissen</option>
+                <option value="fert_manipulation">  Manipulation</option>
+                <option value="fert_uberzeugen">  Überzeugen</option>
+                <option value="" disabled>── &#x1F4D6; Wissen ──</option>
+                <option value="fert_bildung">  Bildung</option>
+                <option value="fert_handwerk">  Handwerk</option>
+                <option value="fert_heilkunst">  Heilkunst</option>
+                <option value="fert_kulturwissen">  Kulturwissen</option>
+                <option value="fert_tierfuhrung">  Tierführung</option>
+                <option value="fert_uberlebenskunst">  Überlebenskunst</option>
+                <option value="" disabled>── &#x2728;&#xFE0F; Zauber ──</option>
+                <option value="fert_zaubern">  Zaubern</option>
+                <option value="fert_zauberwerk">  Zauberwerk</option>
+                <option value="fert_zauberwissen">  Zauberwissen</option>
+
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_7_name" placeholder="Spezialisierung"></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_7_stufe"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_spez_7_ew" readonly="true" tabindex="-1"></div></td>
+            <td><button type="roll" name="roll_spez_7" value="&{template:default} {{name=&#x1F393; @{spez_7_name} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{spez_7_ew}]]}}" class="dice-btn"></button></td>
+          </tr>
+
+          <tr>
+            <td><select name="attr_spez_8_fertigkeit" class="spez-fert-select">
+              <option value=""></option>
+                <option value="" disabled>── &#x1F3C3; Körper ──</option>
+                <option value="fert_athletik">  Athletik</option>
+                <option value="fert_beweglichkeit">  Beweglichkeit</option>
+                <option value="fert_fingerfertigkeit">  Fingerfertigkeit</option>
+                <option value="fert_heimlichkeit">  Heimlichkeit</option>
+                <option value="fert_kraftakt">  Kraftakt</option>
+                <option value="fert_wahrnehmung">  Wahrnehmung</option>
+                <option value="" disabled>── &#x1F4AC; Sozial ──</option>
+                <option value="fert_darbietung">  Darbietung</option>
+                <option value="fert_einschuchterung">  Einschüchterung</option>
+                <option value="fert_empathie">  Empathie</option>
+                <option value="fert_gassenwissen">  Gassenwissen</option>
+                <option value="fert_manipulation">  Manipulation</option>
+                <option value="fert_uberzeugen">  Überzeugen</option>
+                <option value="" disabled>── &#x1F4D6; Wissen ──</option>
+                <option value="fert_bildung">  Bildung</option>
+                <option value="fert_handwerk">  Handwerk</option>
+                <option value="fert_heilkunst">  Heilkunst</option>
+                <option value="fert_kulturwissen">  Kulturwissen</option>
+                <option value="fert_tierfuhrung">  Tierführung</option>
+                <option value="fert_uberlebenskunst">  Überlebenskunst</option>
+                <option value="" disabled>── &#x2728;&#xFE0F; Zauber ──</option>
+                <option value="fert_zaubern">  Zaubern</option>
+                <option value="fert_zauberwerk">  Zauberwerk</option>
+                <option value="fert_zauberwissen">  Zauberwissen</option>
+
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_8_name" placeholder="Spezialisierung"></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_8_stufe"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_spez_8_ew" readonly="true" tabindex="-1"></div></td>
+            <td><button type="roll" name="roll_spez_8" value="&{template:default} {{name=&#x1F393; @{spez_8_name} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{spez_8_ew}]]}}" class="dice-btn"></button></td>
+          </tr>
+
+          <tr>
+            <td><select name="attr_spez_9_fertigkeit" class="spez-fert-select">
+              <option value=""></option>
+                <option value="" disabled>── &#x1F3C3; Körper ──</option>
+                <option value="fert_athletik">  Athletik</option>
+                <option value="fert_beweglichkeit">  Beweglichkeit</option>
+                <option value="fert_fingerfertigkeit">  Fingerfertigkeit</option>
+                <option value="fert_heimlichkeit">  Heimlichkeit</option>
+                <option value="fert_kraftakt">  Kraftakt</option>
+                <option value="fert_wahrnehmung">  Wahrnehmung</option>
+                <option value="" disabled>── &#x1F4AC; Sozial ──</option>
+                <option value="fert_darbietung">  Darbietung</option>
+                <option value="fert_einschuchterung">  Einschüchterung</option>
+                <option value="fert_empathie">  Empathie</option>
+                <option value="fert_gassenwissen">  Gassenwissen</option>
+                <option value="fert_manipulation">  Manipulation</option>
+                <option value="fert_uberzeugen">  Überzeugen</option>
+                <option value="" disabled>── &#x1F4D6; Wissen ──</option>
+                <option value="fert_bildung">  Bildung</option>
+                <option value="fert_handwerk">  Handwerk</option>
+                <option value="fert_heilkunst">  Heilkunst</option>
+                <option value="fert_kulturwissen">  Kulturwissen</option>
+                <option value="fert_tierfuhrung">  Tierführung</option>
+                <option value="fert_uberlebenskunst">  Überlebenskunst</option>
+                <option value="" disabled>── &#x2728;&#xFE0F; Zauber ──</option>
+                <option value="fert_zaubern">  Zaubern</option>
+                <option value="fert_zauberwerk">  Zauberwerk</option>
+                <option value="fert_zauberwissen">  Zauberwissen</option>
+
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_9_name" placeholder="Spezialisierung"></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_9_stufe"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_spez_9_ew" readonly="true" tabindex="-1"></div></td>
+            <td><button type="roll" name="roll_spez_9" value="&{template:default} {{name=&#x1F393; @{spez_9_name} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{spez_9_ew}]]}}" class="dice-btn"></button></td>
+          </tr>
+
+          <tr>
+            <td><select name="attr_spez_10_fertigkeit" class="spez-fert-select">
+              <option value=""></option>
+                <option value="" disabled>── &#x1F3C3; Körper ──</option>
+                <option value="fert_athletik">  Athletik</option>
+                <option value="fert_beweglichkeit">  Beweglichkeit</option>
+                <option value="fert_fingerfertigkeit">  Fingerfertigkeit</option>
+                <option value="fert_heimlichkeit">  Heimlichkeit</option>
+                <option value="fert_kraftakt">  Kraftakt</option>
+                <option value="fert_wahrnehmung">  Wahrnehmung</option>
+                <option value="" disabled>── &#x1F4AC; Sozial ──</option>
+                <option value="fert_darbietung">  Darbietung</option>
+                <option value="fert_einschuchterung">  Einschüchterung</option>
+                <option value="fert_empathie">  Empathie</option>
+                <option value="fert_gassenwissen">  Gassenwissen</option>
+                <option value="fert_manipulation">  Manipulation</option>
+                <option value="fert_uberzeugen">  Überzeugen</option>
+                <option value="" disabled>── &#x1F4D6; Wissen ──</option>
+                <option value="fert_bildung">  Bildung</option>
+                <option value="fert_handwerk">  Handwerk</option>
+                <option value="fert_heilkunst">  Heilkunst</option>
+                <option value="fert_kulturwissen">  Kulturwissen</option>
+                <option value="fert_tierfuhrung">  Tierführung</option>
+                <option value="fert_uberlebenskunst">  Überlebenskunst</option>
+                <option value="" disabled>── &#x2728;&#xFE0F; Zauber ──</option>
+                <option value="fert_zaubern">  Zaubern</option>
+                <option value="fert_zauberwerk">  Zauberwerk</option>
+                <option value="fert_zauberwissen">  Zauberwissen</option>
+
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_10_name" placeholder="Spezialisierung"></td>
+            <td><input type="text" spellcheck="false" name="attr_spez_10_stufe"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_spez_10_ew" readonly="true" tabindex="-1"></div></td>
+            <td><button type="roll" name="roll_spez_10" value="&{template:default} {{name=&#x1F393; @{spez_10_name} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{spez_10_ew}]]}}" class="dice-btn"></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="section-title">WAFFEN &amp; RÜSTUNG</div>
+    <div class="section-inner waffen-grid">
+      <table class="waffen">
+        <thead>
+          <tr>
+            <th>Waffe</th>
+            <th>Quelle</th>
+            <th class="th-wuerfel">EW</th>
+            <th class="th-schaden">Schaden</th>
+            <th>Merkmale</th>
+            <th class="th-roll"></th>
+            <th class="th-roll">Schaden</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_waffe_name_1"></td>
+            <td><select name="attr_waffe_quelle_1" class="spez-fert-select">
+              <option value=""></option>
+                <option value="" disabled>── &#x2694;&#xFE0F; Kampf ──</option>
+                <option value="fert_anfuhren">  Anführen</option>
+                <option value="fert_fernkampf">  Fernkampf</option>
+                <option value="fert_handgemenge">  Handgemenge</option>
+                <option value="fert_nahkampf">  Nahkampf</option>
+                <option value="" disabled>── Kampf-Spez. ──</option>
+                <option value="spez_1">  Spez. 1</option>
+                <option value="spez_2">  Spez. 2</option>
+                <option value="spez_3">  Spez. 3</option>
+                <option value="spez_4">  Spez. 4</option>
+                <option value="spez_5">  Spez. 5</option>
+            </select></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_waffe_wufel_1" readonly="true" tabindex="-1"></div></td>
+            <td><input type="text" spellcheck="false" name="attr_waffe_schaden_1"></td>
+            <td><input type="text" spellcheck="false" name="attr_waffe_merkmale_1"></td>
+            <td><button type="roll" name="roll_waffe_ew_1" value="&{template:default} {{name=&#x2694;&#xFE0F; @{waffe_name_1} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Angriff (vs. Reflexe)=[[@{wurf_modus}+@{waffe_wufel_1}]]}} {{EW (@{waffe_name_1})=@{waffe_wufel_1}}}" class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_waffe_dmg_1" value="&{template:default} {{name=&#x1F4A5; @{waffe_name_1} — @{name}}} {{Schaden=[[@{waffe_schaden_1}]]}} " class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_waffe_name_2"></td>
+            <td><select name="attr_waffe_quelle_2" class="spez-fert-select">
+              <option value=""></option>
+                <option value="" disabled>── &#x2694;&#xFE0F; Kampf ──</option>
+                <option value="fert_anfuhren">  Anführen</option>
+                <option value="fert_fernkampf">  Fernkampf</option>
+                <option value="fert_handgemenge">  Handgemenge</option>
+                <option value="fert_nahkampf">  Nahkampf</option>
+                <option value="" disabled>── Kampf-Spez. ──</option>
+                <option value="spez_1">  Spez. 1</option>
+                <option value="spez_2">  Spez. 2</option>
+                <option value="spez_3">  Spez. 3</option>
+                <option value="spez_4">  Spez. 4</option>
+                <option value="spez_5">  Spez. 5</option>
+            </select></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_waffe_wufel_2" readonly="true" tabindex="-1"></div></td>
+            <td><input type="text" spellcheck="false" name="attr_waffe_schaden_2"></td>
+            <td><input type="text" spellcheck="false" name="attr_waffe_merkmale_2"></td>
+            <td><button type="roll" name="roll_waffe_ew_2" value="&{template:default} {{name=&#x2694;&#xFE0F; @{waffe_name_2} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Angriff (vs. Reflexe)=[[@{wurf_modus}+@{waffe_wufel_2}]]}} {{EW (@{waffe_name_2})=@{waffe_wufel_2}}}" class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_waffe_dmg_2" value="&{template:default} {{name=&#x1F4A5; @{waffe_name_2} — @{name}}} {{Schaden=[[@{waffe_schaden_2}]]}} " class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_waffe_name_3"></td>
+            <td><select name="attr_waffe_quelle_3" class="spez-fert-select">
+              <option value=""></option>
+                <option value="" disabled>── &#x2694;&#xFE0F; Kampf ──</option>
+                <option value="fert_anfuhren">  Anführen</option>
+                <option value="fert_fernkampf">  Fernkampf</option>
+                <option value="fert_handgemenge">  Handgemenge</option>
+                <option value="fert_nahkampf">  Nahkampf</option>
+                <option value="" disabled>── Kampf-Spez. ──</option>
+                <option value="spez_1">  Spez. 1</option>
+                <option value="spez_2">  Spez. 2</option>
+                <option value="spez_3">  Spez. 3</option>
+                <option value="spez_4">  Spez. 4</option>
+                <option value="spez_5">  Spez. 5</option>
+            </select></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_waffe_wufel_3" readonly="true" tabindex="-1"></div></td>
+            <td><input type="text" spellcheck="false" name="attr_waffe_schaden_3"></td>
+            <td><input type="text" spellcheck="false" name="attr_waffe_merkmale_3"></td>
+            <td><button type="roll" name="roll_waffe_ew_3" value="&{template:default} {{name=&#x2694;&#xFE0F; @{waffe_name_3} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Angriff (vs. Reflexe)=[[@{wurf_modus}+@{waffe_wufel_3}]]}} {{EW (@{waffe_name_3})=@{waffe_wufel_3}}}" class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_waffe_dmg_3" value="&{template:default} {{name=&#x1F4A5; @{waffe_name_3} — @{name}}} {{Schaden=[[@{waffe_schaden_3}]]}} " class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_waffe_name_4"></td>
+            <td><select name="attr_waffe_quelle_4" class="spez-fert-select">
+              <option value=""></option>
+                <option value="" disabled>── &#x2694;&#xFE0F; Kampf ──</option>
+                <option value="fert_anfuhren">  Anführen</option>
+                <option value="fert_fernkampf">  Fernkampf</option>
+                <option value="fert_handgemenge">  Handgemenge</option>
+                <option value="fert_nahkampf">  Nahkampf</option>
+                <option value="" disabled>── Kampf-Spez. ──</option>
+                <option value="spez_1">  Spez. 1</option>
+                <option value="spez_2">  Spez. 2</option>
+                <option value="spez_3">  Spez. 3</option>
+                <option value="spez_4">  Spez. 4</option>
+                <option value="spez_5">  Spez. 5</option>
+            </select></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_waffe_wufel_4" readonly="true" tabindex="-1"></div></td>
+            <td><input type="text" spellcheck="false" name="attr_waffe_schaden_4"></td>
+            <td><input type="text" spellcheck="false" name="attr_waffe_merkmale_4"></td>
+            <td><button type="roll" name="roll_waffe_ew_4" value="&{template:default} {{name=&#x2694;&#xFE0F; @{waffe_name_4} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Angriff (vs. Reflexe)=[[@{wurf_modus}+@{waffe_wufel_4}]]}} {{EW (@{waffe_name_4})=@{waffe_wufel_4}}}" class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_waffe_dmg_4" value="&{template:default} {{name=&#x1F4A5; @{waffe_name_4} — @{name}}} {{Schaden=[[@{waffe_schaden_4}]]}} " class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_waffe_name_5"></td>
+            <td><select name="attr_waffe_quelle_5" class="spez-fert-select">
+              <option value=""></option>
+                <option value="" disabled>── &#x2694;&#xFE0F; Kampf ──</option>
+                <option value="fert_anfuhren">  Anführen</option>
+                <option value="fert_fernkampf">  Fernkampf</option>
+                <option value="fert_handgemenge">  Handgemenge</option>
+                <option value="fert_nahkampf">  Nahkampf</option>
+                <option value="" disabled>── Kampf-Spez. ──</option>
+                <option value="spez_1">  Spez. 1</option>
+                <option value="spez_2">  Spez. 2</option>
+                <option value="spez_3">  Spez. 3</option>
+                <option value="spez_4">  Spez. 4</option>
+                <option value="spez_5">  Spez. 5</option>
+            </select></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_waffe_wufel_5" readonly="true" tabindex="-1"></div></td>
+            <td><input type="text" spellcheck="false" name="attr_waffe_schaden_5"></td>
+            <td><input type="text" spellcheck="false" name="attr_waffe_merkmale_5"></td>
+            <td><button type="roll" name="roll_waffe_ew_5" value="&{template:default} {{name=&#x2694;&#xFE0F; @{waffe_name_5} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Angriff (vs. Reflexe)=[[@{wurf_modus}+@{waffe_wufel_5}]]}} {{EW (@{waffe_name_5})=@{waffe_wufel_5}}}" class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_waffe_dmg_5" value="&{template:default} {{name=&#x1F4A5; @{waffe_name_5} — @{name}}} {{Schaden=[[@{waffe_schaden_5}]]}} " class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_waffe_name_6"></td>
+            <td><select name="attr_waffe_quelle_6" class="spez-fert-select">
+              <option value=""></option>
+                <option value="" disabled>── &#x2694;&#xFE0F; Kampf ──</option>
+                <option value="fert_anfuhren">  Anführen</option>
+                <option value="fert_fernkampf">  Fernkampf</option>
+                <option value="fert_handgemenge">  Handgemenge</option>
+                <option value="fert_nahkampf">  Nahkampf</option>
+                <option value="" disabled>── Kampf-Spez. ──</option>
+                <option value="spez_1">  Spez. 1</option>
+                <option value="spez_2">  Spez. 2</option>
+                <option value="spez_3">  Spez. 3</option>
+                <option value="spez_4">  Spez. 4</option>
+                <option value="spez_5">  Spez. 5</option>
+            </select></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_waffe_wufel_6" readonly="true" tabindex="-1"></div></td>
+            <td><input type="text" spellcheck="false" name="attr_waffe_schaden_6"></td>
+            <td><input type="text" spellcheck="false" name="attr_waffe_merkmale_6"></td>
+            <td><button type="roll" name="roll_waffe_ew_6" value="&{template:default} {{name=&#x2694;&#xFE0F; @{waffe_name_6} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Angriff (vs. Reflexe)=[[@{wurf_modus}+@{waffe_wufel_6}]]}} {{EW (@{waffe_name_6})=@{waffe_wufel_6}}}" class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_waffe_dmg_6" value="&{template:default} {{name=&#x1F4A5; @{waffe_name_6} — @{name}}} {{Schaden=[[@{waffe_schaden_6}]]}} " class="dice-btn dmg-btn"></button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div>
+        <div class="rustung-header">
+          <div class="rustung-header-label">Rüstung</div>
+          <div class="rustung-header-label rustung-header-label--right">Schutz</div>
+        </div>
+        <div class="rustung-row"><input type="text" spellcheck="false" name="attr_rustung_name_1"><input type="text" spellcheck="false" name="attr_rustung_schutz_1" class="schutz"></div>
+        <div class="rustung-row"><input type="text" spellcheck="false" name="attr_rustung_name_2"><input type="text" spellcheck="false" name="attr_rustung_schutz_2" class="schutz"></div>
+        <div class="rustung-row"><input type="text" spellcheck="false" name="attr_rustung_name_3"><input type="text" spellcheck="false" name="attr_rustung_schutz_3" class="schutz"></div>
+        <div class="nachteile">
+          <b>Rüstungsnachteile</b>
+          <div class="cb-row"><input type="checkbox" name="attr_nachteil_beweglichkeit" value="1"> Beweglichkeit</div>
+          <div class="cb-row"><input type="checkbox" name="attr_nachteil_heimlichkeit" value="1"> Heimlichkeit</div>
+          <div class="cb-row"><input type="checkbox" name="attr_nachteil_wahrnehmung" value="1"> Wahrnehmung</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- end page1 -->
+
+
+<!-- PAGE 2: HINTERGRUND -->
+<div class="sheet-page" id="sheet-page2">
+  <div class="bg-cols">
+    <div>
+      <div class="section-block section-block--mb">
+        <div class="section-title">GRAD</div>
+        <div class="section-inner">
+          <div class="grad-inner">
+            <input type="text" spellcheck="false" name="attr_grad" class="input-grad">
+            <div>
+              <div class="xp-labels"><span>frei</span><span></span><span>eingesetzt</span><span></span><span>gesamt</span></div>
+              <div class="grad-xp-row">
+                <input type="text" spellcheck="false" name="attr_xp_frei"><span>+</span><input type="text" spellcheck="false" name="attr_xp_eingesetzt"><span>=</span><input type="text" spellcheck="false" name="attr_xp_gesamt">
+              </div>
+              <div class="xp-erfahrung-label">Erfahrung</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block section-block--mb">
+        <div class="section-title">HINTERGRUND</div>
+        <div class="section-inner">
+          <div class="field-label">Erscheinung</div>
+          <textarea spellcheck="false" name="attr_erscheinung" class="field-ta" rows="3"></textarea>
+          <div class="hintergrund-zwei-cols">
+            <div><div class="field-label">Marotte</div><textarea spellcheck="false" name="attr_marotte" class="field-ta" rows="3"></textarea></div>
+            <div><div class="field-label">Motivation</div><textarea spellcheck="false" name="attr_motivation" class="field-ta" rows="3"></textarea></div>
+          </div>
+          <div class="geschichte-wrap"><div class="field-label">Geschichte</div><textarea spellcheck="false" name="attr_geschichte" class="field-ta" rows="5"></textarea></div>
+        </div>
+      </div>
+
+      <div class="section-block section-block--mb">
+        <div class="section-title">BEZIEHUNGEN</div>
+        <div class="section-inner">
+          <table class="beziehungen-table">
+            <thead><tr><th class="th-bez-name">Name</th><th>Beziehung</th></tr></thead>
+            <tbody>
+              <tr><td><input type="text" spellcheck="false" name="attr_bez_name_1"></td><td><input type="text" spellcheck="false" name="attr_bez_art_1"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_bez_name_2"></td><td><input type="text" spellcheck="false" name="attr_bez_art_2"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_bez_name_3"></td><td><input type="text" spellcheck="false" name="attr_bez_art_3"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_bez_name_4"></td><td><input type="text" spellcheck="false" name="attr_bez_art_4"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_bez_name_5"></td><td><input type="text" spellcheck="false" name="attr_bez_art_5"></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section-block section-block--mb">
+        <div class="section-title">SPRACHEN</div>
+        <div class="section-inner"><textarea spellcheck="false" name="attr_sprachen" class="field-ta" rows="2"></textarea></div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">NOTIZEN</div>
+        <div class="section-inner"><textarea spellcheck="false" name="attr_notizen_bg" class="field-ta" rows="5"></textarea></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="schicksalsmuenzen-row">Schicksalsmünzen <input type="text" spellcheck="false" name="attr_schicksalsmuenzen" class="input-schicksalsmuenzen"> &#x1FA99;</div>
+      <div class="section-block">
+        <div class="section-title">AUSRÜSTUNG</div>
+        <div class="section-inner">
+          <div class="inline-field inline-field--mb"><span>Tragkraft</span><input type="text" spellcheck="false" name="attr_tragkraft" class="input-tragkraft"> &#x1F4BC;</div>
+          <table class="ausrustung-table">
+            <tbody>
+              <tr><td class="td-anzahl"><input type="text" spellcheck="false" name="attr_ausrustung_anz_1"></td><td><input type="text" spellcheck="false" name="attr_ausrustung_name_1"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_ausrustung_anz_2"></td><td><input type="text" spellcheck="false" name="attr_ausrustung_name_2"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_ausrustung_anz_3"></td><td><input type="text" spellcheck="false" name="attr_ausrustung_name_3"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_ausrustung_anz_4"></td><td><input type="text" spellcheck="false" name="attr_ausrustung_name_4"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_ausrustung_anz_5"></td><td><input type="text" spellcheck="false" name="attr_ausrustung_name_5"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_ausrustung_anz_6"></td><td><input type="text" spellcheck="false" name="attr_ausrustung_name_6"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_ausrustung_anz_7"></td><td><input type="text" spellcheck="false" name="attr_ausrustung_name_7"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_ausrustung_anz_8"></td><td><input type="text" spellcheck="false" name="attr_ausrustung_name_8"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_ausrustung_anz_9"></td><td><input type="text" spellcheck="false" name="attr_ausrustung_name_9"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_ausrustung_anz_10"></td><td><input type="text" spellcheck="false" name="attr_ausrustung_name_10"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_ausrustung_anz_11"></td><td><input type="text" spellcheck="false" name="attr_ausrustung_name_11"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_ausrustung_anz_12"></td><td><input type="text" spellcheck="false" name="attr_ausrustung_name_12"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_ausrustung_anz_13"></td><td><input type="text" spellcheck="false" name="attr_ausrustung_name_13"></td></tr>
+
+              <tr><td><input type="text" spellcheck="false" name="attr_ausrustung_anz_14"></td><td><input type="text" spellcheck="false" name="attr_ausrustung_name_14"></td></tr>
+            </tbody>
+          </table>
+          <div class="winzige-label">Winzige Gegenstände</div>
+          <textarea spellcheck="false" name="attr_winzige_gegenstande" class="field-ta" rows="3"></textarea>
+          <table class="munzen-table">
+            <thead><tr><th>Gold</th><th>Silber</th><th>Kupfer</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><input type="text" spellcheck="false" name="attr_gold" placeholder="0"></td>
+                <td><input type="text" spellcheck="false" name="attr_silber" placeholder="0"></td>
+                <td><input type="text" spellcheck="false" name="attr_kupfer" placeholder="0"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- end page2 -->
+
+
+<!-- PAGE 3: ZAUBER -->
+<div class="sheet-page" id="sheet-page3">
+  <div class="zauber-header">
+    <div>
+      <div class="inline-field"><span>Name:</span><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_name" readonly="true" tabindex="-1"></div></div>
+      <div class="inline-field inline-field--mt">
+        <span>Zaubern: </span>
+        <div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_fert_zaubern" readonly="true" tabindex="-1" class="fert-zaubern-input"></div>
+        <button type="roll" name="roll_fert_zaubern" value="&{template:default} {{name=&#x2728;&#xFE0F; Zaubern — @{name}}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}]]}} {{Fertigkeitswert=@{fert_zaubern}}} " class="dice-btn"></button>
+      </div>
+    </div>
+    <div class="zauber-header-icon">&#x1F9D9;&#x200D;&#x2642;&#xFE0F;</div>
+  </div>
+
+  <div class="section-block section-block--mb">
+    <div class="section-title">ZAUBERSCHULEN</div>
+    <div class="section-inner">
+
+      <!-- Sichtbares Editierfeld: Schulname = Selektor + Datenschlüssel -->
+      <div class="zauber-schule-item zauber-schule-item--stack">
+        <div class="zschule-name-row">
+          <select name="attr_zschule_name" class="zschule-name-input">
+            <option value=""></option>
+            <option value="Drachensang">Die Schule des Drachensangs</option>
+            <option value="Hexerei">Die Schule der Hexerei</option>
+            <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+            <option value="Wundertaten">Die Schule der Wundertaten</option>
+            <option value="Zauberei">Die Schule der Zauberei</option>
+          </select>
+          <input type="text" spellcheck="false" name="attr_display_zschule_stufe" class="zschule-stufe-input" placeholder="Stf.">
+        </div>
+        <textarea spellcheck="false" name="attr_display_zschule_wert" class="zschule-wert-ta"></textarea>
+      </div>
+
+      <!-- Versteckte Speicherfelder pro Schule -->
+      <div style="display:none">
+        <input type="hidden" name="attr_zschule_Drachensang_stufe">
+        <textarea spellcheck="false" name="attr_zschule_Drachensang_wert"></textarea>
+        <input type="hidden" name="attr_zschule_Hexerei_stufe">
+        <textarea spellcheck="false" name="attr_zschule_Hexerei_wert"></textarea>
+        <input type="hidden" name="attr_zschule_Lebenskraft_stufe">
+        <textarea spellcheck="false" name="attr_zschule_Lebenskraft_wert"></textarea>
+        <input type="hidden" name="attr_zschule_Wundertaten_stufe">
+        <textarea spellcheck="false" name="attr_zschule_Wundertaten_wert"></textarea>
+        <input type="hidden" name="attr_zschule_Zauberei_stufe">
+        <textarea spellcheck="false" name="attr_zschule_Zauberei_wert"></textarea>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-block section-block--mb">
+    <div class="section-title">KLEINE ZAUBER &amp; ZAUBERSALZE</div>
+    <div class="section-inner"><textarea spellcheck="false" name="attr_kleine_zauber" class="field-ta" rows="4"></textarea></div>
+  </div>
+
+  <div class="section-block">
+    <div class="section-title">ZAUBER</div>
+    <div class="section-inner">
+          <input type="checkbox" name="attr_zauber_1_notizen_offen" id="znb-1" class="zauber-notiz-toggle">
+          <input type="checkbox" name="attr_zauber_2_notizen_offen" id="znb-2" class="zauber-notiz-toggle">
+          <input type="checkbox" name="attr_zauber_3_notizen_offen" id="znb-3" class="zauber-notiz-toggle">
+          <input type="checkbox" name="attr_zauber_4_notizen_offen" id="znb-4" class="zauber-notiz-toggle">
+          <input type="checkbox" name="attr_zauber_5_notizen_offen" id="znb-5" class="zauber-notiz-toggle">
+          <input type="checkbox" name="attr_zauber_6_notizen_offen" id="znb-6" class="zauber-notiz-toggle">
+          <input type="checkbox" name="attr_zauber_7_notizen_offen" id="znb-7" class="zauber-notiz-toggle">
+          <input type="checkbox" name="attr_zauber_8_notizen_offen" id="znb-8" class="zauber-notiz-toggle">
+          <input type="checkbox" name="attr_zauber_9_notizen_offen" id="znb-9" class="zauber-notiz-toggle">
+          <input type="checkbox" name="attr_zauber_10_notizen_offen" id="znb-10" class="zauber-notiz-toggle">
+          <input type="checkbox" name="attr_zauber_11_notizen_offen" id="znb-11" class="zauber-notiz-toggle">
+          <input type="checkbox" name="attr_zauber_12_notizen_offen" id="znb-12" class="zauber-notiz-toggle">
+          <input type="checkbox" name="attr_zauber_13_notizen_offen" id="znb-13" class="zauber-notiz-toggle">
+          <input type="checkbox" name="attr_zauber_14_notizen_offen" id="znb-14" class="zauber-notiz-toggle">
+          <input type="checkbox" name="attr_zauber_15_notizen_offen" id="znb-15" class="zauber-notiz-toggle">
+          <input type="checkbox" name="attr_zauber_16_notizen_offen" id="znb-16" class="zauber-notiz-toggle">
+      <table class="zauber-list">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th class="th-stufe">Stufe</th>
+            <th class="th-schule">Schule</th>
+            <th class="th-seite">Seite</th>
+            <th>Schaden</th>
+            <th></th>
+            <th class="th-zroll">EW</th>
+            <th class="th-zroll">Schaden</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_zauber_1_name"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_zauber_1_stufe" readonly="true" tabindex="-1"></div></td>
+            <td><select name="attr_zauber_1_schule" class="zauber-schule-select">
+              <option value=""></option>
+              <option value="Drachensang">Die Schule des Drachensangs</option>
+              <option value="Hexerei">Die Schule der Hexerei</option>
+              <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+              <option value="Wundertaten">Die Schule der Wundertaten</option>
+              <option value="Zauberei">Die Schule der Zauberei</option>
+              <option value="kl. Zauber">Kleine Zauber (ohne Schule)</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_1_seite"></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_1_schaden" placeholder="z.B. 1d6+2"></td><td><label for="znb-1" class="zauber-notiz-btn">&#x1F4DC;</label></td>
+            <td><button type="roll" name="roll_zauber_ew_1" value="&{template:default} {{name=&#x2728;&#xFE0F; @{zauber_1_name} — @{name}}} {{Schule=@{zauber_1_schule} · Stufe @{zauber_1_stufe}}} {{AP-Kosten=[[{3*@{zauber_1_stufe},1}kh1]] AP}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}+@{zauber_1_stufen_bonus}]]}} " class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_zauber_dmg_1" value="&{template:default} {{name=&#x1F4A5; @{zauber_1_name} — @{name}}} {{Schaden=[[@{zauber_1_schaden}]]}}" class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr class="zauber-notizen-row zauber-notizen-row-1">
+            <td colspan="8"><textarea spellcheck="false" name="attr_zauber_1_notizen" class="zauber-notiz-ta" placeholder="Notizen zu diesem Zauber…"></textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_zauber_2_name"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_zauber_2_stufe" readonly="true" tabindex="-1"></div></td>
+            <td><select name="attr_zauber_2_schule" class="zauber-schule-select">
+              <option value=""></option>
+              <option value="Drachensang">Die Schule des Drachensangs</option>
+              <option value="Hexerei">Die Schule der Hexerei</option>
+              <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+              <option value="Wundertaten">Die Schule der Wundertaten</option>
+              <option value="Zauberei">Die Schule der Zauberei</option>
+              <option value="kl. Zauber">Kleine Zauber (ohne Schule)</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_2_seite"></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_2_schaden" placeholder="z.B. 1d6+2"></td><td><label for="znb-2" class="zauber-notiz-btn">&#x1F4DC;</label></td>
+            <td><button type="roll" name="roll_zauber_ew_2" value="&{template:default} {{name=&#x2728;&#xFE0F; @{zauber_2_name} — @{name}}} {{Schule=@{zauber_2_schule} · Stufe @{zauber_2_stufe}}} {{AP-Kosten=[[{3*@{zauber_2_stufe},1}kh1]] AP}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}+@{zauber_2_stufen_bonus}]]}} " class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_zauber_dmg_2" value="&{template:default} {{name=&#x1F4A5; @{zauber_2_name} — @{name}}} {{Schaden=[[@{zauber_2_schaden}]]}}" class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr class="zauber-notizen-row zauber-notizen-row-2">
+            <td colspan="8"><textarea spellcheck="false" name="attr_zauber_2_notizen" class="zauber-notiz-ta" placeholder="Notizen zu diesem Zauber…"></textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_zauber_3_name"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_zauber_3_stufe" readonly="true" tabindex="-1"></div></td>
+            <td><select name="attr_zauber_3_schule" class="zauber-schule-select">
+              <option value=""></option>
+              <option value="Drachensang">Die Schule des Drachensangs</option>
+              <option value="Hexerei">Die Schule der Hexerei</option>
+              <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+              <option value="Wundertaten">Die Schule der Wundertaten</option>
+              <option value="Zauberei">Die Schule der Zauberei</option>
+              <option value="kl. Zauber">Kleine Zauber (ohne Schule)</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_3_seite"></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_3_schaden" placeholder="z.B. 1d6+2"></td><td><label for="znb-3" class="zauber-notiz-btn">&#x1F4DC;</label></td>
+            <td><button type="roll" name="roll_zauber_ew_3" value="&{template:default} {{name=&#x2728;&#xFE0F; @{zauber_3_name} — @{name}}} {{Schule=@{zauber_3_schule} · Stufe @{zauber_3_stufe}}} {{AP-Kosten=[[{3*@{zauber_3_stufe},1}kh1]] AP}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}+@{zauber_3_stufen_bonus}]]}} " class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_zauber_dmg_3" value="&{template:default} {{name=&#x1F4A5; @{zauber_3_name} — @{name}}} {{Schaden=[[@{zauber_3_schaden}]]}}" class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr class="zauber-notizen-row zauber-notizen-row-3">
+            <td colspan="8"><textarea spellcheck="false" name="attr_zauber_3_notizen" class="zauber-notiz-ta" placeholder="Notizen zu diesem Zauber…"></textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_zauber_4_name"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_zauber_4_stufe" readonly="true" tabindex="-1"></div></td>
+            <td><select name="attr_zauber_4_schule" class="zauber-schule-select">
+              <option value=""></option>
+              <option value="Drachensang">Die Schule des Drachensangs</option>
+              <option value="Hexerei">Die Schule der Hexerei</option>
+              <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+              <option value="Wundertaten">Die Schule der Wundertaten</option>
+              <option value="Zauberei">Die Schule der Zauberei</option>
+              <option value="kl. Zauber">Kleine Zauber (ohne Schule)</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_4_seite"></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_4_schaden" placeholder="z.B. 1d6+2"></td><td><label for="znb-4" class="zauber-notiz-btn">&#x1F4DC;</label></td>
+            <td><button type="roll" name="roll_zauber_ew_4" value="&{template:default} {{name=&#x2728;&#xFE0F; @{zauber_4_name} — @{name}}} {{Schule=@{zauber_4_schule} · Stufe @{zauber_4_stufe}}} {{AP-Kosten=[[{3*@{zauber_4_stufe},1}kh1]] AP}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}+@{zauber_4_stufen_bonus}]]}} " class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_zauber_dmg_4" value="&{template:default} {{name=&#x1F4A5; @{zauber_4_name} — @{name}}} {{Schaden=[[@{zauber_4_schaden}]]}}" class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr class="zauber-notizen-row zauber-notizen-row-4">
+            <td colspan="8"><textarea spellcheck="false" name="attr_zauber_4_notizen" class="zauber-notiz-ta" placeholder="Notizen zu diesem Zauber…"></textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_zauber_5_name"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_zauber_5_stufe" readonly="true" tabindex="-1"></div></td>
+            <td><select name="attr_zauber_5_schule" class="zauber-schule-select">
+              <option value=""></option>
+              <option value="Drachensang">Die Schule des Drachensangs</option>
+              <option value="Hexerei">Die Schule der Hexerei</option>
+              <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+              <option value="Wundertaten">Die Schule der Wundertaten</option>
+              <option value="Zauberei">Die Schule der Zauberei</option>
+              <option value="kl. Zauber">Kleine Zauber (ohne Schule)</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_5_seite"></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_5_schaden" placeholder="z.B. 1d6+2"></td><td><label for="znb-5" class="zauber-notiz-btn">&#x1F4DC;</label></td>
+            <td><button type="roll" name="roll_zauber_ew_5" value="&{template:default} {{name=&#x2728;&#xFE0F; @{zauber_5_name} — @{name}}} {{Schule=@{zauber_5_schule} · Stufe @{zauber_5_stufe}}} {{AP-Kosten=[[{3*@{zauber_5_stufe},1}kh1]] AP}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}+@{zauber_5_stufen_bonus}]]}} " class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_zauber_dmg_5" value="&{template:default} {{name=&#x1F4A5; @{zauber_5_name} — @{name}}} {{Schaden=[[@{zauber_5_schaden}]]}}" class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr class="zauber-notizen-row zauber-notizen-row-5">
+            <td colspan="8"><textarea spellcheck="false" name="attr_zauber_5_notizen" class="zauber-notiz-ta" placeholder="Notizen zu diesem Zauber…"></textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_zauber_6_name"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_zauber_6_stufe" readonly="true" tabindex="-1"></div></td>
+            <td><select name="attr_zauber_6_schule" class="zauber-schule-select">
+              <option value=""></option>
+              <option value="Drachensang">Die Schule des Drachensangs</option>
+              <option value="Hexerei">Die Schule der Hexerei</option>
+              <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+              <option value="Wundertaten">Die Schule der Wundertaten</option>
+              <option value="Zauberei">Die Schule der Zauberei</option>
+              <option value="kl. Zauber">Kleine Zauber (ohne Schule)</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_6_seite"></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_6_schaden" placeholder="z.B. 1d6+2"></td><td><label for="znb-6" class="zauber-notiz-btn">&#x1F4DC;</label></td>
+            <td><button type="roll" name="roll_zauber_ew_6" value="&{template:default} {{name=&#x2728;&#xFE0F; @{zauber_6_name} — @{name}}} {{Schule=@{zauber_6_schule} · Stufe @{zauber_6_stufe}}} {{AP-Kosten=[[{3*@{zauber_6_stufe},1}kh1]] AP}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}+@{zauber_6_stufen_bonus}]]}} " class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_zauber_dmg_6" value="&{template:default} {{name=&#x1F4A5; @{zauber_6_name} — @{name}}} {{Schaden=[[@{zauber_6_schaden}]]}}" class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr class="zauber-notizen-row zauber-notizen-row-6">
+            <td colspan="8"><textarea spellcheck="false" name="attr_zauber_6_notizen" class="zauber-notiz-ta" placeholder="Notizen zu diesem Zauber…"></textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_zauber_7_name"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_zauber_7_stufe" readonly="true" tabindex="-1"></div></td>
+            <td><select name="attr_zauber_7_schule" class="zauber-schule-select">
+              <option value=""></option>
+              <option value="Drachensang">Die Schule des Drachensangs</option>
+              <option value="Hexerei">Die Schule der Hexerei</option>
+              <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+              <option value="Wundertaten">Die Schule der Wundertaten</option>
+              <option value="Zauberei">Die Schule der Zauberei</option>
+              <option value="kl. Zauber">Kleine Zauber (ohne Schule)</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_7_seite"></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_7_schaden" placeholder="z.B. 1d6+2"></td><td><label for="znb-7" class="zauber-notiz-btn">&#x1F4DC;</label></td>
+            <td><button type="roll" name="roll_zauber_ew_7" value="&{template:default} {{name=&#x2728;&#xFE0F; @{zauber_7_name} — @{name}}} {{Schule=@{zauber_7_schule} · Stufe @{zauber_7_stufe}}} {{AP-Kosten=[[{3*@{zauber_7_stufe},1}kh1]] AP}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}+@{zauber_7_stufen_bonus}]]}} " class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_zauber_dmg_7" value="&{template:default} {{name=&#x1F4A5; @{zauber_7_name} — @{name}}} {{Schaden=[[@{zauber_7_schaden}]]}}" class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr class="zauber-notizen-row zauber-notizen-row-7">
+            <td colspan="8"><textarea spellcheck="false" name="attr_zauber_7_notizen" class="zauber-notiz-ta" placeholder="Notizen zu diesem Zauber…"></textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_zauber_8_name"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_zauber_8_stufe" readonly="true" tabindex="-1"></div></td>
+            <td><select name="attr_zauber_8_schule" class="zauber-schule-select">
+              <option value=""></option>
+              <option value="Drachensang">Die Schule des Drachensangs</option>
+              <option value="Hexerei">Die Schule der Hexerei</option>
+              <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+              <option value="Wundertaten">Die Schule der Wundertaten</option>
+              <option value="Zauberei">Die Schule der Zauberei</option>
+              <option value="kl. Zauber">Kleine Zauber (ohne Schule)</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_8_seite"></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_8_schaden" placeholder="z.B. 1d6+2"></td><td><label for="znb-8" class="zauber-notiz-btn">&#x1F4DC;</label></td>
+            <td><button type="roll" name="roll_zauber_ew_8" value="&{template:default} {{name=&#x2728;&#xFE0F; @{zauber_8_name} — @{name}}} {{Schule=@{zauber_8_schule} · Stufe @{zauber_8_stufe}}} {{AP-Kosten=[[{3*@{zauber_8_stufe},1}kh1]] AP}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}+@{zauber_8_stufen_bonus}]]}} " class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_zauber_dmg_8" value="&{template:default} {{name=&#x1F4A5; @{zauber_8_name} — @{name}}} {{Schaden=[[@{zauber_8_schaden}]]}}" class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr class="zauber-notizen-row zauber-notizen-row-8">
+            <td colspan="8"><textarea spellcheck="false" name="attr_zauber_8_notizen" class="zauber-notiz-ta" placeholder="Notizen zu diesem Zauber…"></textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_zauber_9_name"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_zauber_9_stufe" readonly="true" tabindex="-1"></div></td>
+            <td><select name="attr_zauber_9_schule" class="zauber-schule-select">
+              <option value=""></option>
+              <option value="Drachensang">Die Schule des Drachensangs</option>
+              <option value="Hexerei">Die Schule der Hexerei</option>
+              <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+              <option value="Wundertaten">Die Schule der Wundertaten</option>
+              <option value="Zauberei">Die Schule der Zauberei</option>
+              <option value="kl. Zauber">Kleine Zauber (ohne Schule)</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_9_seite"></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_9_schaden" placeholder="z.B. 1d6+2"></td><td><label for="znb-9" class="zauber-notiz-btn">&#x1F4DC;</label></td>
+            <td><button type="roll" name="roll_zauber_ew_9" value="&{template:default} {{name=&#x2728;&#xFE0F; @{zauber_9_name} — @{name}}} {{Schule=@{zauber_9_schule} · Stufe @{zauber_9_stufe}}} {{AP-Kosten=[[{3*@{zauber_9_stufe},1}kh1]] AP}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}+@{zauber_9_stufen_bonus}]]}} " class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_zauber_dmg_9" value="&{template:default} {{name=&#x1F4A5; @{zauber_9_name} — @{name}}} {{Schaden=[[@{zauber_9_schaden}]]}}" class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr class="zauber-notizen-row zauber-notizen-row-9">
+            <td colspan="8"><textarea spellcheck="false" name="attr_zauber_9_notizen" class="zauber-notiz-ta" placeholder="Notizen zu diesem Zauber…"></textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_zauber_10_name"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_zauber_10_stufe" readonly="true" tabindex="-1"></div></td>
+            <td><select name="attr_zauber_10_schule" class="zauber-schule-select">
+              <option value=""></option>
+              <option value="Drachensang">Die Schule des Drachensangs</option>
+              <option value="Hexerei">Die Schule der Hexerei</option>
+              <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+              <option value="Wundertaten">Die Schule der Wundertaten</option>
+              <option value="Zauberei">Die Schule der Zauberei</option>
+              <option value="kl. Zauber">Kleine Zauber (ohne Schule)</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_10_seite"></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_10_schaden" placeholder="z.B. 1d6+2"></td><td><label for="znb-10" class="zauber-notiz-btn">&#x1F4DC;</label></td>
+            <td><button type="roll" name="roll_zauber_ew_10" value="&{template:default} {{name=&#x2728;&#xFE0F; @{zauber_10_name} — @{name}}} {{Schule=@{zauber_10_schule} · Stufe @{zauber_10_stufe}}} {{AP-Kosten=[[{3*@{zauber_10_stufe},1}kh1]] AP}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}+@{zauber_10_stufen_bonus}]]}} " class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_zauber_dmg_10" value="&{template:default} {{name=&#x1F4A5; @{zauber_10_name} — @{name}}} {{Schaden=[[@{zauber_10_schaden}]]}}" class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr class="zauber-notizen-row zauber-notizen-row-10">
+            <td colspan="8"><textarea spellcheck="false" name="attr_zauber_10_notizen" class="zauber-notiz-ta" placeholder="Notizen zu diesem Zauber…"></textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_zauber_11_name"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_zauber_11_stufe" readonly="true" tabindex="-1"></div></td>
+            <td><select name="attr_zauber_11_schule" class="zauber-schule-select">
+              <option value=""></option>
+              <option value="Drachensang">Die Schule des Drachensangs</option>
+              <option value="Hexerei">Die Schule der Hexerei</option>
+              <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+              <option value="Wundertaten">Die Schule der Wundertaten</option>
+              <option value="Zauberei">Die Schule der Zauberei</option>
+              <option value="kl. Zauber">Kleine Zauber (ohne Schule)</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_11_seite"></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_11_schaden" placeholder="z.B. 1d6+2"></td><td><label for="znb-11" class="zauber-notiz-btn">&#x1F4DC;</label></td>
+            <td><button type="roll" name="roll_zauber_ew_11" value="&{template:default} {{name=&#x2728;&#xFE0F; @{zauber_11_name} — @{name}}} {{Schule=@{zauber_11_schule} · Stufe @{zauber_11_stufe}}} {{AP-Kosten=[[{3*@{zauber_11_stufe},1}kh1]] AP}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}+@{zauber_11_stufen_bonus}]]}} " class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_zauber_dmg_11" value="&{template:default} {{name=&#x1F4A5; @{zauber_11_name} — @{name}}} {{Schaden=[[@{zauber_11_schaden}]]}}" class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr class="zauber-notizen-row zauber-notizen-row-11">
+            <td colspan="8"><textarea spellcheck="false" name="attr_zauber_11_notizen" class="zauber-notiz-ta" placeholder="Notizen zu diesem Zauber…"></textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_zauber_12_name"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_zauber_12_stufe" readonly="true" tabindex="-1"></div></td>
+            <td><select name="attr_zauber_12_schule" class="zauber-schule-select">
+              <option value=""></option>
+              <option value="Drachensang">Die Schule des Drachensangs</option>
+              <option value="Hexerei">Die Schule der Hexerei</option>
+              <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+              <option value="Wundertaten">Die Schule der Wundertaten</option>
+              <option value="Zauberei">Die Schule der Zauberei</option>
+              <option value="kl. Zauber">Kleine Zauber (ohne Schule)</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_12_seite"></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_12_schaden" placeholder="z.B. 1d6+2"></td><td><label for="znb-12" class="zauber-notiz-btn">&#x1F4DC;</label></td>
+            <td><button type="roll" name="roll_zauber_ew_12" value="&{template:default} {{name=&#x2728;&#xFE0F; @{zauber_12_name} — @{name}}} {{Schule=@{zauber_12_schule} · Stufe @{zauber_12_stufe}}} {{AP-Kosten=[[{3*@{zauber_12_stufe},1}kh1]] AP}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}+@{zauber_12_stufen_bonus}]]}} " class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_zauber_dmg_12" value="&{template:default} {{name=&#x1F4A5; @{zauber_12_name} — @{name}}} {{Schaden=[[@{zauber_12_schaden}]]}}" class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr class="zauber-notizen-row zauber-notizen-row-12">
+            <td colspan="8"><textarea spellcheck="false" name="attr_zauber_12_notizen" class="zauber-notiz-ta" placeholder="Notizen zu diesem Zauber…"></textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_zauber_13_name"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_zauber_13_stufe" readonly="true" tabindex="-1"></div></td>
+            <td><select name="attr_zauber_13_schule" class="zauber-schule-select">
+              <option value=""></option>
+              <option value="Drachensang">Die Schule des Drachensangs</option>
+              <option value="Hexerei">Die Schule der Hexerei</option>
+              <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+              <option value="Wundertaten">Die Schule der Wundertaten</option>
+              <option value="Zauberei">Die Schule der Zauberei</option>
+              <option value="kl. Zauber">Kleine Zauber (ohne Schule)</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_13_seite"></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_13_schaden" placeholder="z.B. 1d6+2"></td><td><label for="znb-13" class="zauber-notiz-btn">&#x1F4DC;</label></td>
+            <td><button type="roll" name="roll_zauber_ew_13" value="&{template:default} {{name=&#x2728;&#xFE0F; @{zauber_13_name} — @{name}}} {{Schule=@{zauber_13_schule} · Stufe @{zauber_13_stufe}}} {{AP-Kosten=[[{3*@{zauber_13_stufe},1}kh1]] AP}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}+@{zauber_13_stufen_bonus}]]}} " class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_zauber_dmg_13" value="&{template:default} {{name=&#x1F4A5; @{zauber_13_name} — @{name}}} {{Schaden=[[@{zauber_13_schaden}]]}}" class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr class="zauber-notizen-row zauber-notizen-row-13">
+            <td colspan="8"><textarea spellcheck="false" name="attr_zauber_13_notizen" class="zauber-notiz-ta" placeholder="Notizen zu diesem Zauber…"></textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_zauber_14_name"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_zauber_14_stufe" readonly="true" tabindex="-1"></div></td>
+            <td><select name="attr_zauber_14_schule" class="zauber-schule-select">
+              <option value=""></option>
+              <option value="Drachensang">Die Schule des Drachensangs</option>
+              <option value="Hexerei">Die Schule der Hexerei</option>
+              <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+              <option value="Wundertaten">Die Schule der Wundertaten</option>
+              <option value="Zauberei">Die Schule der Zauberei</option>
+              <option value="kl. Zauber">Kleine Zauber (ohne Schule)</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_14_seite"></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_14_schaden" placeholder="z.B. 1d6+2"></td><td><label for="znb-14" class="zauber-notiz-btn">&#x1F4DC;</label></td>
+            <td><button type="roll" name="roll_zauber_ew_14" value="&{template:default} {{name=&#x2728;&#xFE0F; @{zauber_14_name} — @{name}}} {{Schule=@{zauber_14_schule} · Stufe @{zauber_14_stufe}}} {{AP-Kosten=[[{3*@{zauber_14_stufe},1}kh1]] AP}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}+@{zauber_14_stufen_bonus}]]}} " class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_zauber_dmg_14" value="&{template:default} {{name=&#x1F4A5; @{zauber_14_name} — @{name}}} {{Schaden=[[@{zauber_14_schaden}]]}}" class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr class="zauber-notizen-row zauber-notizen-row-14">
+            <td colspan="8"><textarea spellcheck="false" name="attr_zauber_14_notizen" class="zauber-notiz-ta" placeholder="Notizen zu diesem Zauber…"></textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_zauber_15_name"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_zauber_15_stufe" readonly="true" tabindex="-1"></div></td>
+            <td><select name="attr_zauber_15_schule" class="zauber-schule-select">
+              <option value=""></option>
+              <option value="Drachensang">Die Schule des Drachensangs</option>
+              <option value="Hexerei">Die Schule der Hexerei</option>
+              <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+              <option value="Wundertaten">Die Schule der Wundertaten</option>
+              <option value="Zauberei">Die Schule der Zauberei</option>
+              <option value="kl. Zauber">Kleine Zauber (ohne Schule)</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_15_seite"></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_15_schaden" placeholder="z.B. 1d6+2"></td><td><label for="znb-15" class="zauber-notiz-btn">&#x1F4DC;</label></td>
+            <td><button type="roll" name="roll_zauber_ew_15" value="&{template:default} {{name=&#x2728;&#xFE0F; @{zauber_15_name} — @{name}}} {{Schule=@{zauber_15_schule} · Stufe @{zauber_15_stufe}}} {{AP-Kosten=[[{3*@{zauber_15_stufe},1}kh1]] AP}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}+@{zauber_15_stufen_bonus}]]}} " class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_zauber_dmg_15" value="&{template:default} {{name=&#x1F4A5; @{zauber_15_name} — @{name}}} {{Schaden=[[@{zauber_15_schaden}]]}}" class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr class="zauber-notizen-row zauber-notizen-row-15">
+            <td colspan="8"><textarea spellcheck="false" name="attr_zauber_15_notizen" class="zauber-notiz-ta" placeholder="Notizen zu diesem Zauber…"></textarea></td>
+          </tr>
+
+          <tr>
+            <td><input type="text" spellcheck="false" name="attr_zauber_16_name"></td>
+            <td><div class="readonly-wrap"><input type="text" spellcheck="false" name="attr_zauber_16_stufe" readonly="true" tabindex="-1"></div></td>
+            <td><select name="attr_zauber_16_schule" class="zauber-schule-select">
+              <option value=""></option>
+              <option value="Drachensang">Die Schule des Drachensangs</option>
+              <option value="Hexerei">Die Schule der Hexerei</option>
+              <option value="Lebenskraft">Die Schule der Lebenskraft</option>
+              <option value="Wundertaten">Die Schule der Wundertaten</option>
+              <option value="Zauberei">Die Schule der Zauberei</option>
+              <option value="kl. Zauber">Kleine Zauber (ohne Schule)</option>
+            </select></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_16_seite"></td>
+            <td><input type="text" spellcheck="false" name="attr_zauber_16_schaden" placeholder="z.B. 1d6+2"></td><td><label for="znb-16" class="zauber-notiz-btn">&#x1F4DC;</label></td>
+            <td><button type="roll" name="roll_zauber_ew_16" value="&{template:default} {{name=&#x2728;&#xFE0F; @{zauber_16_name} — @{name}}} {{Schule=@{zauber_16_schule} · Stufe @{zauber_16_stufe}}} {{AP-Kosten=[[{3*@{zauber_16_stufe},1}kh1]] AP}} {{Modus=@{wurf_modus_label}}} {{Wurf=[[@{wurf_modus}+@{fert_zaubern}+@{zauber_16_stufen_bonus}]]}} " class="dice-btn"></button></td>
+            <td><button type="roll" name="roll_zauber_dmg_16" value="&{template:default} {{name=&#x1F4A5; @{zauber_16_name} — @{name}}} {{Schaden=[[@{zauber_16_schaden}]]}}" class="dice-btn dmg-btn"></button></td>
+          </tr>
+
+          <tr class="zauber-notizen-row zauber-notizen-row-16">
+            <td colspan="8"><textarea spellcheck="false" name="attr_zauber_16_notizen" class="zauber-notiz-ta" placeholder="Notizen zu diesem Zauber…"></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div><!-- end page3 -->
+
+<!-- PAGE 4: NOTIZEN -->
+<div class="sheet-page" id="sheet-page4">
+  <div class="section-block">
+    <div class="section-title">NOTIZEN</div>
+    <div class="section-inner"><textarea spellcheck="false" name="attr_notizen_main" class="field-ta" rows="22"></textarea></div>
+  </div>
+</div>
+
+<!-- PAGE 5: NPC -->
+<div class="sheet-page" id="sheet-page5">
+
+  <!-- NPC-Modus Toggle -->
+  <div class="npc-modus-bar">
+    <label class="npc-modus-label">
+      <input type="checkbox" name="attr_npc_modus" value="1">
+      <span class="npc-modus-text">&#x1F480; NPC-Modus — Tab beim Öffnen immer zuerst anzeigen</span>
+    </label>
+  </div>
+
+  <!-- ÜBERSICHT: Name, LP, AP (gespiegelt) -->
+  <div class="section-block">
+    <div class="section-title">ÜBERSICHT</div>
+    <div class="section-inner npc-overview">
+
+      <div class="npc-name-row">
+        <span class="npc-label">Name</span>
+        <input type="text" spellcheck="false" name="attr_name" class="npc-name-input">
+      </div>
+
+      <div class="npc-pools-row">
+        <div class="npc-pool-block npc-pool-lp">
+          <div class="npc-pool-title">LP</div>
+          <div class="npc-pool-vals">
+            <input type="text" spellcheck="false" name="attr_lp" placeholder="—" class="npc-pool-input">
+            <span class="npc-pool-sep">/</span>
+            <input type="text" spellcheck="false" name="attr_lp_max" placeholder="max" class="npc-pool-input npc-pool-input--max">
+            <span class="npc-pool-unit">LP max.</span>
+          </div>
+        </div>
+        <div class="npc-pool-block npc-pool-lp">
+          <div class="npc-pool-title">Schutz</div>
+          <div class="npc-pool-vals">
+            <input type="text" spellcheck="false" name="attr_lp_schutz" value="0" class="npc-pool-input">
+          </div>
+        </div>
+        <div class="npc-pool-divider"></div>
+        <div class="npc-pool-block npc-pool-ap">
+          <div class="npc-pool-title">AP</div>
+          <div class="npc-pool-vals">
+            <input type="text" spellcheck="false" name="attr_ap" placeholder="—" class="npc-pool-input">
+            <span class="npc-pool-sep">/</span>
+            <input type="text" spellcheck="false" name="attr_ap_max" placeholder="max" class="npc-pool-input npc-pool-input--max">
+            <span class="npc-pool-unit">AP max.</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="section-inner npc-notizen-cols">
+      <div class="npc-notiz-col">
+        <div class="npc-notiz-title">Moral</div>
+        <textarea spellcheck="false" name="attr_npc_moral" class="npc-notiz-ta" rows="6"></textarea>
+      </div>
+      <div class="npc-notiz-col">
+        <div class="npc-notiz-title">Besonderheiten</div>
+        <textarea spellcheck="false" name="attr_npc_besonderheiten" class="npc-notiz-ta" rows="6"></textarea>
+      </div>
+    </div>
+      
+    </div>
+  </div>
+
+  <!-- SCHNELLWÜRFE -->
+  <div class="section-block">
+    <div class="section-title">SCHNELLWÜRFE</div>
+    <div class="section-inner">
+
+      <!-- Würfelwurf 1 — 1W20 mit V/N -->
+      <div class="npc-roll-row">
+        <span class="npc-roll-badge">1W20</span>
+        <input type="text" spellcheck="false" name="attr_npc_roll1_name" value="Bereiche, in der die Figur gut ist" class="npc-roll-name">
+        <input type="text" spellcheck="false" name="attr_npc_roll1_wert" placeholder="+0" class="npc-roll-wert">
+        <button type="roll" name="roll_npc_1"
+          value="&{template:default} {{name=&#x1F3B2; @{npc_roll1_name} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Würfelwurf=[[@{wurf_modus}+@{npc_roll1_wert}]]}} {{Wert=@{npc_roll1_wert}}}"
+          class="dice-btn"></button>
+      </div>
+
+      <!-- Würfelwurf 2 — 1W20 mit V/N -->
+      <div class="npc-roll-row">
+        <span class="npc-roll-badge">1W20</span>
+        <input type="text" spellcheck="false" name="attr_npc_roll2_name" value="Bereiche, in der die Figur nicht gut ist" class="npc-roll-name">
+        <input type="text" spellcheck="false" name="attr_npc_roll2_wert" placeholder="+0" class="npc-roll-wert">
+        <button type="roll" name="roll_npc_2"
+          value="&{template:default} {{name=&#x1F3B2; @{npc_roll2_name} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Würfelwurf=[[@{wurf_modus}+@{npc_roll2_wert}]]}} {{Wert=@{npc_roll2_wert}}}"
+          class="dice-btn"></button>
+      </div>
+
+      <!-- Würfelwurf 3 — 1W3 mit V/N -->
+      <div class="npc-roll-row npc-roll-row--w3">
+        <span class="npc-roll-badge npc-roll-badge--w3">1W3</span>
+        <input type="text" spellcheck="false" name="attr_npc_roll3_name" value="Bereiche, die völlig außerhalb der Kompetenz der Figur liegen" class="npc-roll-name">
+        <input type="text" spellcheck="false" name="attr_npc_roll3_wert" value="0" class="npc-roll-wert">
+        <button type="roll" name="roll_npc_3"
+          value="&{template:default} {{name=&#x1F3B2; @{npc_roll3_name} — @{name}}} {{Modus=@{wurf_modus_label}}} {{Würfelwurf=[[@{npc_w3_modus}+@{npc_roll3_wert}]]}} {{Wert=@{npc_roll3_wert}}}"
+          class="dice-btn"></button>
+      </div>
+
+      <div class="npc-roll-hint">Würfelmodus (Vorteil / Normal / Nachteil) wird vom globalen Würfelmodus-Schalter oben übernommen.</div>
+
+    </div>
+  </div>
+
+  <!-- NOTIZEN (zweispaltig) -->
+  <div class="section-block">
+    <div class="section-title">NOTIZEN</div>
+    <div class="section-inner npc-notizen-cols">
+      <div class="npc-notiz-col">
+        <div class="npc-notiz-title">&#x2694;&#xFE0F; Angriff</div>
+        <textarea spellcheck="false" name="attr_npc_notiz_1" class="npc-notiz-ta" rows="12" placeholder="Notizen…"></textarea>
+      </div>
+      <div class="npc-notiz-col">
+        <div class="npc-notiz-title">&#x2728;&#xFE0F; Zauber</div>
+        <textarea spellcheck="false" name="attr_npc_notiz_2" class="npc-notiz-ta" rows="12" placeholder="Notizen…"></textarea>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end page5 -->
+
+</div><!-- end m6body -->
+
+<script type="text/worker">
+// ═══════════════════════════════════════════════════════
+// MIDGARD 6 – Sheet Worker
+// ═══════════════════════════════════════════════════════
+
+// ── Hilfsfunktionen ──────────────────────────────────────
+
+function normalizeWurf(val) {
+  return (val || '').replace(/(\d+)[Ww](\d+)/g, '$1d$2');
+}
+
+function stufenBonus(stufe) {
+  return stufe === 0 ? 0 : stufe + 1;
+}
+
+function range(n) {
+  return Array.from({ length: n }, function(_, i) { return i + 1; });
+}
+
+// Bekannte Schulen-Schlüssel
+var SCHULEN_KEYS = ['Drachensang', 'Hexerei', 'Lebenskraft', 'Wundertaten', 'Zauberei'];
+
+
+// ── 1. Würfelmodus: Label ────────────────────────────────
+on('change:wurf_modus', function(e) {
+  var formel = e.newValue;
+  var label = formel.indexOf('kl1') !== -1 ? '&#x25BC; Nachteil'
+            : formel.indexOf('k1')  !== -1 ? '&#x25B2; Vorteil'
+            : 'Normal';
+  setAttrs({ wurf_modus_label: label });
+});
+
+
+// ── 2. W→d Normalisierung ────────────────────────────────
+
+range(6).forEach(function(i) {
+  on('change:waffe_schaden_' + i, function(e) {
+    var update = {};
+    update['waffe_schaden_' + i] = normalizeWurf(e.newValue);
+    setAttrs(update, { silent: true });
+  });
+});
+
+range(16).forEach(function(j) {
+  on('change:zauber_' + j + '_schaden', function(e) {
+    var update = {};
+    update['zauber_' + j + '_schaden'] = normalizeWurf(e.newValue);
+    setAttrs(update, { silent: true });
+  });
+});
+
+
+// ── 3. Zauber-Boni ───────────────────────────────────────
+// Liest Stufen direkt aus den schulspezifischen Attrs (zschule_X_stufe)
+
+function berechneAlleZauberBoni() {
+  var felder = [];
+  SCHULEN_KEYS.forEach(function(k) {
+    felder.push('zschule_' + k + '_stufe');
+  });
+  range(16).forEach(function(i) {
+    felder.push('zauber_' + i + '_schule');
+  });
+
+  getAttrs(felder, function(v) {
+    var schulMap = {};
+    SCHULEN_KEYS.forEach(function(k) {
+      var stufe = parseInt(v['zschule_' + k + '_stufe'], 10) || 0;
+      schulMap[k] = { stufe: stufe, bonus: stufenBonus(stufe) };
+    });
+
+    var updates = {};
+    range(16).forEach(function(i) {
+      var schule = v['zauber_' + i + '_schule'] || '';
+      var info   = schulMap[schule];
+      updates['zauber_' + i + '_stufe']        = info ? info.stufe : 0;
+      updates['zauber_' + i + '_stufen_bonus'] = info ? info.bonus : 0;
+    });
+    setAttrs(updates);
+  });
+}
+
+var schulWatch = [];
+SCHULEN_KEYS.forEach(function(k) { schulWatch.push('zschule_' + k + '_stufe'); });
+range(16).forEach(function(i)    { schulWatch.push('zauber_' + i + '_schule'); });
+on('change:' + schulWatch.join(' change:'), berechneAlleZauberBoni);
+
+
+// ── 3b. Zauberschulen Panel-Switcher ─────────────────────
+// Schulname-Dropdown = Selektor. Stufe/Textarea werden pro Schulschlüssel gespeichert.
+
+// Lädt gespeicherte Daten des gewählten Schulschlüssels in die Anzeigefelder
+function ladeSchule(key) {
+  if (!key) {
+    setAttrs({ display_zschule_stufe: '', display_zschule_wert: '' }, { silent: true });
+    return;
+  }
+  getAttrs(['zschule_' + key + '_stufe', 'zschule_' + key + '_wert'], function(v) {
+    setAttrs({
+      display_zschule_stufe: v['zschule_' + key + '_stufe'] || '',
+      display_zschule_wert:  v['zschule_' + key + '_wert']  || ''
+    }, { silent: true });
+  });
+}
+
+// Schulname gewechselt → Anzeigefelder neu laden
+on('change:zschule_name', function(e) {
+  ladeSchule(e.newValue || '');
+});
+
+// Stufe oder Wert geändert → sofort in den aktuellen Schulschlüssel schreiben
+on('change:display_zschule_stufe change:display_zschule_wert', function() {
+  getAttrs(['zschule_name', 'display_zschule_stufe', 'display_zschule_wert'], function(v) {
+    var key = v['zschule_name'] || '';
+    if (!key) return;
+    var updates = {};
+    updates['zschule_' + key + '_stufe'] = v['display_zschule_stufe'] || '';
+    updates['zschule_' + key + '_wert']  = v['display_zschule_wert']  || '';
+    setAttrs(updates, { silent: true }, berechneAlleZauberBoni);
+  });
+});
+
+
+// ── 4. Spezialisierungen ──────────────────────────────────
+
+function berechneSpezZeile(idx) {
+  getAttrs(['spez_' + idx + '_fertigkeit', 'spez_' + idx + '_stufe'], function(v) {
+    var fertAttr = v['spez_' + idx + '_fertigkeit'] || '';
+    var stufe    = parseInt(v['spez_' + idx + '_stufe'], 10) || 0;
+    var bonus    = stufenBonus(stufe);
+    var updates  = {};
+
+    if (fertAttr) {
+      getAttrs([fertAttr], function(fv) {
+        updates['spez_' + idx + '_ew'] = (parseInt(fv[fertAttr], 10) || 0) + bonus;
+        setAttrs(updates);
+      });
+    } else {
+      updates['spez_' + idx + '_ew'] = bonus;
+      setAttrs(updates);
+    }
+  });
+}
+
+var spezWatch = [];
+range(10).forEach(function(i) {
+  spezWatch.push('spez_' + i + '_fertigkeit');
+  spezWatch.push('spez_' + i + '_stufe');
+});
+on('change:' + spezWatch.join(' change:'), function(e) {
+  var src = e.sourceAttribute;
+  range(10).forEach(function(i) {
+    if (src === 'spez_' + i + '_fertigkeit' || src === 'spez_' + i + '_stufe') {
+      berechneSpezZeile(i);
+    }
+  });
+});
+
+var fertWatch = ["fert_anfuhren","fert_fernkampf","fert_handgemenge","fert_nahkampf","fert_athletik","fert_beweglichkeit","fert_fingerfertigkeit","fert_heimlichkeit","fert_kraftakt","fert_wahrnehmung","fert_darbietung","fert_einschuchterung","fert_empathie","fert_gassenwissen","fert_manipulation","fert_uberzeugen","fert_bildung","fert_handwerk","fert_heilkunst","fert_kulturwissen","fert_tierfuhrung","fert_uberlebenskunst","fert_zaubern","fert_zauberwerk","fert_zauberwissen"];
+on('change:' + fertWatch.join(' change:'), function() {
+  range(10).forEach(berechneSpezZeile);
+});
+
+
+// ── NPC W3-Modus ─────────────────────────────────────────
+// Spiegelt den globalen Würfelmodus auf 1W3-Basis für den NPC-Tab
+
+function berechneNpcW3Modus(v) {
+  var m = v['wurf_modus'] || '1d20';
+  var w3;
+  if (m.indexOf('kl1') !== -1) {
+    w3 = '{1d3,1d3}kl1';
+  } else if (m.indexOf('k1') !== -1) {
+    w3 = '{1d3,1d3}k1';
+  } else {
+    w3 = '1d3';
+  }
+  return w3;
+}
+
+on('change:wurf_modus', function() {
+  getAttrs(['wurf_modus'], function(v) {
+    setAttrs({ npc_w3_modus: berechneNpcW3Modus(v) });
+  });
+});
+
+
+
+var KAMPF_FERTIGKEITEN = ["fert_anfuhren","fert_fernkampf","fert_handgemenge","fert_nahkampf"];
+
+function berechneAlleWaffenEW() {
+  var felder = [];
+  range(6).forEach(function(i) { felder.push('waffe_quelle_' + i); });
+  felder = felder.concat(KAMPF_FERTIGKEITEN);
+  range(5).forEach(function(i) { felder.push('spez_' + i + '_ew'); });
+
+  getAttrs(felder, function(v) {
+    var updates = {};
+    range(6).forEach(function(i) {
+      var quelle = v['waffe_quelle_' + i] || '';
+      var ew = 0;
+      if (KAMPF_FERTIGKEITEN.indexOf(quelle) !== -1) {
+        ew = parseInt(v[quelle], 10) || 0;
+      } else if (quelle.indexOf('spez_') === 0) {
+        var spezNr = parseInt(quelle.replace('spez_', ''), 10);
+        if (spezNr >= 1 && spezNr <= 5) {
+          ew = parseInt(v['spez_' + spezNr + '_ew'], 10) || 0;
+        }
+      }
+      updates['waffe_wufel_' + i] = ew;
+    });
+    setAttrs(updates);
+  });
+}
+
+var waffenWatch = [];
+range(6).forEach(function(i) { waffenWatch.push('waffe_quelle_' + i); });
+waffenWatch = waffenWatch.concat(KAMPF_FERTIGKEITEN);
+range(5).forEach(function(i) { waffenWatch.push('spez_' + i + '_ew'); });
+on('change:' + waffenWatch.join(' change:'), berechneAlleWaffenEW);
+
+
+// ── Initialisierung ───────────────────────────────────────
+// Ein einziger getAttrs-Aufruf liest alles, rechnet synchron und
+// schreibt einmal – keine Race Conditions mehr zwischen den Blöcken.
+on('sheet:opened', function() {
+
+  var ALLE_FERTIGKEITEN = [
+    "fert_anfuhren","fert_fernkampf","fert_handgemenge","fert_nahkampf",
+    "fert_athletik","fert_beweglichkeit","fert_fingerfertigkeit","fert_heimlichkeit",
+    "fert_kraftakt","fert_wahrnehmung","fert_darbietung","fert_einschuchterung",
+    "fert_empathie","fert_gassenwissen","fert_manipulation","fert_uberzeugen",
+    "fert_bildung","fert_handwerk","fert_heilkunst","fert_kulturwissen",
+    "fert_tierfuhrung","fert_uberlebenskunst","fert_zaubern","fert_zauberwerk",
+    "fert_zauberwissen"
+  ];
+  var KAMPF_FERTIGKEITEN = ["fert_anfuhren","fert_fernkampf","fert_handgemenge","fert_nahkampf"];
+
+  var leseFelder = ['wurf_modus', 'zschule_name'].concat(ALLE_FERTIGKEITEN);
+
+  // Spez
+  range(10).forEach(function(i) {
+    leseFelder.push('spez_' + i + '_fertigkeit');
+    leseFelder.push('spez_' + i + '_stufe');
+  });
+
+  // Waffen
+  range(6).forEach(function(i) {
+    leseFelder.push('waffe_quelle_' + i);
+    leseFelder.push('waffe_schaden_' + i);
+  });
+
+  // Zauberschulen-Stufen + Zauber-Slots
+  SCHULEN_KEYS.forEach(function(k) {
+    leseFelder.push('zschule_' + k + '_stufe');
+    leseFelder.push('zschule_' + k + '_wert');
+  });
+  range(16).forEach(function(i) {
+    leseFelder.push('zauber_' + i + '_schule');
+    leseFelder.push('zauber_' + i + '_schaden');
+  });
+
+  getAttrs(leseFelder, function(v) {
+    var updates = {};
+
+    // ── 1. Würfelmodus-Label ──────────────────────────────
+    var formel = v['wurf_modus'] || '1d20';
+    updates['wurf_modus_label'] = formel.indexOf('kl1') !== -1 ? '&#x25BC; Nachteil'
+                                : formel.indexOf('k1')  !== -1 ? '&#x25B2; Vorteil'
+                                : 'Normal';
+
+    // ── 1b. NPC W3-Modus ──────────────────────────────────
+    updates['npc_w3_modus'] = berechneNpcW3Modus(v);
+
+    // ── 2. Spezialisierungen ──────────────────────────────
+    range(10).forEach(function(i) {
+      var fertAttr = v['spez_' + i + '_fertigkeit'] || '';
+      var stufe    = parseInt(v['spez_' + i + '_stufe'], 10) || 0;
+      var bonus    = stufenBonus(stufe);
+      var fertWert = fertAttr ? (parseInt(v[fertAttr], 10) || 0) : 0;
+      updates['spez_' + i + '_ew'] = fertWert + bonus;
+    });
+
+    // ── 3. Waffen-EW + W→d Normalisierung ────────────────
+    range(6).forEach(function(i) {
+      var quelle = v['waffe_quelle_' + i] || '';
+      var ew = 0;
+      if (KAMPF_FERTIGKEITEN.indexOf(quelle) !== -1) {
+        ew = parseInt(v[quelle], 10) || 0;
+      } else if (quelle.indexOf('spez_') === 0) {
+        var spezNr = parseInt(quelle.replace('spez_', ''), 10);
+        if (spezNr >= 1 && spezNr <= 5) {
+          ew = updates['spez_' + spezNr + '_ew'] || 0;
+        }
+      }
+      updates['waffe_wufel_' + i]  = ew;
+      updates['waffe_schaden_' + i] = normalizeWurf(v['waffe_schaden_' + i]);
+    });
+
+    // ── 4. Zauber-Boni + W→d Normalisierung ──────────────
+    // Schulen-Map aufbauen
+    var schulMap = {};
+    SCHULEN_KEYS.forEach(function(k) {
+      var stufe = parseInt(v['zschule_' + k + '_stufe'], 10) || 0;
+      schulMap[k] = { stufe: stufe, bonus: stufenBonus(stufe) };
+    });
+    // Pro Zauber-Slot: Stufe/Bonus auf 0 wenn Schule leer oder unbekannt
+    range(16).forEach(function(i) {
+      var schule = v['zauber_' + i + '_schule'] || '';
+      var info   = schulMap[schule];
+      updates['zauber_' + i + '_stufe']        = info ? info.stufe : 0;
+      updates['zauber_' + i + '_stufen_bonus'] = info ? info.bonus : 0;
+      updates['zauber_' + i + '_schaden']      = normalizeWurf(v['zauber_' + i + '_schaden']);
+    });
+
+    // ── 5. Zauberschulen-Panel-Anzeige ───────────────────
+    var aktuelleSchule = v['zschule_name'] || '';
+    if (aktuelleSchule) {
+      updates['display_zschule_stufe'] = v['zschule_' + aktuelleSchule + '_stufe'] || '';
+      updates['display_zschule_wert']  = v['zschule_' + aktuelleSchule + '_wert']  || '';
+    } else {
+      updates['display_zschule_stufe'] = '';
+      updates['display_zschule_wert']  = '';
+    }
+
+    setAttrs(updates);
+  });
+});
+
+</script>

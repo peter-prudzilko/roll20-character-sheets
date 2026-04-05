@@ -1,0 +1,1393 @@
+@keyframes m6diceBounce {
+  0%   { transform: scale(1)    translateY(0);    }
+  20%  { transform: scale(1.15) translateY(-2px); }
+  40%  { transform: scale(0.95) translateY(1px);  }
+  60%  { transform: scale(1.07) translateY(-1px); }
+  80%  { transform: scale(0.98) translateY(0px);  }
+  100% { transform: scale(1)    translateY(0);    }
+}
+
+/* Charakterbogen – Roll20 Custom Sheet
+   Midgard "Die Umstürmten" Reskin
+   ───────────────────────────────── */
+
+#m6body {
+  font-family: 'Georgia', serif;
+  font-size: 11px;
+  color: #1a1a1a;
+  min-width: 760px;
+  overflow-x: auto;
+  zoom: 1.08;
+
+  & * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  & input,
+  & textarea {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  & input[readonly] {
+    color: #7a8b96;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  & .readonly-wrap {
+    display: inline-block;
+    width: 100%;
+    cursor: not-allowed;
+  }
+
+  /* TABS */
+  & input.sheet-tab { display: none; }
+
+  & .sheet-tabs-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+  }
+
+  & .sheet-tab-label {
+    display: inline-block !important;
+    padding: 6px 16px 5px;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    border: 1px solid #b8c8d4;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(to bottom, #cdd8e0, #dbe4ea);
+    color: #4a5a66;
+    cursor: pointer;
+    margin-right: 2px;
+    white-space: nowrap;
+    line-height: 1.4;
+    vertical-align: bottom;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  & .sheet-page {
+    display: none;
+    background: #fff;
+    border: 1px solid #c0cdd6;
+    border-radius: 0 6px 6px 6px;
+    padding: 16px;
+    min-width: 600px;
+    overflow: hidden;
+  }
+
+  /* KOPFZEILE */
+  & .char-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    margin-bottom: 4px;
+    align-items: start;
+    min-width: 0;
+  }
+
+  & .char-header-left,
+  & .char-header-right {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  & .char-header-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    font-size: 42px;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", sans-serif;
+  }
+
+  & .header-line {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+
+    & span {
+      font-weight: bold;
+      font-size: 11px;
+      white-space: nowrap;
+      color: #C4811C;
+    }
+
+    & input {
+      flex: 1;
+      border: none;
+      border-bottom: 1px solid #8aa0b0;
+      padding: 1px 2px;
+      background: #f3f7fa;
+      min-width: 0;
+    }
+  }
+
+  /* SEKTIONEN */
+  & .section-block {
+    border: 1.5px solid #b8c8d4;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    overflow: hidden;
+  }
+
+  & .section-title {
+    background: linear-gradient(to right, #e2eaf0 0%, #d0dce5 40%, #bccdd8 100%);
+    border-left: 4px solid #C4811C;
+    padding: 3px 8px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.04em;
+    color: #C4811C;
+    border-bottom: 1px solid #b8c8d4;
+    text-transform: uppercase;
+  }
+
+  & .section-inner {
+    padding: 6px 8px;
+  }
+
+  /* GUNST & MAKEL */
+  & .gm-header {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to right, #e2eaf0 0%, #d0dce5 40%, #bccdd8 100%);
+    border-left: 4px solid #C4811C;
+    border-bottom: 1px solid #b8c8d4;
+    padding: 4px 8px 2px;
+  }
+
+  & .gm-header-left,
+  & .gm-header-right {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    color: #C4811C;
+    letter-spacing: 0.03em;
+  }
+
+  & .gunst-makel {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  & .gm-divider {
+    background: #c0cdd6;
+  }
+
+  & .gm-rows {
+    padding: 0 8px 6px;
+  }
+
+  & .gm-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    border-bottom: 0.5px solid #d0dce5;
+    min-height: 22px;
+    min-width: 0;
+    overflow: hidden;
+
+    & > div {
+      border-right: 0.5px solid #d0dce5;
+      padding: 2px 4px;
+
+      &:last-child { border-right: none; }
+    }
+  }
+
+  /* LP / AP / RESISTENZEN */
+  & .cb-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+
+    & input[type=checkbox] {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+  }
+
+  /* CHECKBOXEN */
+  & input[type=checkbox] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    background: #f3f7fa;
+    border: 1px solid #8aa0b0;
+    border-radius: 3px;
+    cursor: pointer;
+    flex-shrink: 0;
+    vertical-align: middle;
+    position: relative;
+
+    &:checked {
+      background: #C4811C;
+      border-color: #a06a14;
+
+      &::after {
+        content: '✓';
+        position: absolute;
+        top: -1px;
+        left: 1px;
+        color: #fff;
+        line-height: 1;
+      }
+    }
+  }
+
+  /* FERTIGKEITEN & SPEZIALISIERUNGEN */
+  & .fert-cols {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  & .fert-col {
+    border-right: 1px solid #d0dce5;
+    padding: 4px 6px;
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:last-child { border-right: none; }
+  }
+
+  & .fert-icon {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 4px;
+    height: 22px;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", sans-serif;
+  }
+
+  & .fert-items-inner {
+    width: 100%;
+    max-width: 130px;
+  }
+
+  /* SPEZIALISIERUNGEN — Tabellenstruktur */
+  & table.spez-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 5px;
+    border: 0.5px solid #a0b5c2;
+    overflow: hidden;
+    font-size: 10px;
+
+    & th {
+      border-bottom: 0.5px solid #a0b5c2;
+      border-right: 0.5px solid #a0b5c2;
+      padding: 2px 4px;
+      background: #e8eef3;
+      font-weight: bold;
+      text-align: left;
+      color: #2a3a44;
+      &:last-child { border-right: none; }
+    }
+
+    & th.th-spez-fert  { width: 36px; text-align: center; }
+    & th.th-spez-stufe { width: 36px; text-align: center; }
+    & th.th-spez-ew    { width: 44px; text-align: center; }
+    & th.th-spez-roll  { width: 24px; text-align: center; font-size: 8px; }
+
+    & td {
+      border-bottom: 0.5px solid #d0dce5;
+      border-right: 0.5px solid #d0dce5;
+      padding: 2px;
+      vertical-align: middle;
+      background: #f3f7fa;
+      &:last-child { border-right: none; }
+
+      & input {
+        width: 100%;
+        border: none;
+        background: transparent;
+        padding: 1px 3px;
+        border-radius: 3px;
+      }
+    }
+
+    & tr:last-child td { border-bottom: none; }
+
+    & tr.spez-subheader th {
+      background: #e8eef3;
+      border-bottom: 0.5px solid #a0b5c2;
+      border-right: 0.5px solid #a0b5c2;
+      padding: 2px 4px;
+      font-weight: bold;
+      text-align: left;
+      font-size: 10px;
+      color: #2a3a44;
+      &:last-child { border-right: none; }
+    }
+  }
+
+  & .spez-fert-select {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 10px;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    padding: 1px 2px;
+  }
+
+  & .spez-text2 {
+    width: 100%;
+    border: none;
+    background: #f3f7fa;
+    font-size: 10px;
+    resize: none;
+    height: 100%;
+  }
+
+  /* WAFFEN & RÜSTUNG */
+  & .waffen-grid {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 8px;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  & .rustung-header {
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    margin-bottom: 2px;
+  }
+
+  & .rustung-header-label {
+    font-size: 11px;
+    font-weight: bold;
+    color: #C4811C;
+
+    &.rustung-header-label--right { text-align: center; }
+  }
+
+  & .rustung-row {
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    border: 0.5px solid #c0cdd6;
+    border-radius: 3px;
+    margin-bottom: 2px;
+    overflow: hidden;
+
+    & input {
+      border: none;
+      background: #f3f7fa;
+      padding: 2px 4px;
+      width: 100%;
+    }
+
+    & .schutz { border-left: 0.5px solid #c0cdd6; }
+  }
+
+  & .nachteile {
+    margin-top: 6px;
+    font-size: 10px;
+
+    & b {
+      display: block;
+      margin-bottom: 3px;
+      color: #C4811C;
+    }
+  }
+
+  /* TABELLEN (gemeinsame Basis) */
+  & table.waffen,
+  & table.zauber-list,
+  & .beziehungen-table,
+  & .ausrustung-table,
+  & .munzen-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 5px;
+    border: 0.5px solid #a0b5c2;
+    overflow: hidden;
+    font-size: 10px;
+
+    & th {
+      border-bottom: 0.5px solid #a0b5c2;
+      border-right: 0.5px solid #a0b5c2;
+      padding: 2px 4px;
+      background: #e8eef3;
+      font-weight: bold;
+      text-align: left;
+      color: #2a3a44;
+
+      &:last-child { border-right: none; }
+    }
+
+    & td {
+      border-bottom: 0.5px solid #d0dce5;
+      border-right: 0.5px solid #d0dce5;
+      padding: 2px;
+      vertical-align: middle;
+      background: #f3f7fa;
+
+      &:last-child { border-right: none; }
+
+      & input {
+        width: 100%;
+        border: none;
+        background: transparent;
+        padding: 1px 3px;
+        border-radius: 3px;
+      }
+    }
+
+    & tr:last-child td { border-bottom: none; }
+  }
+
+  & table.waffen {
+    & th.th-wuerfel { width: 30px; }
+    & th.th-schaden { width: 50px; }
+  }
+
+  & table.zauber-list {
+    & th.th-stufe  { width: 45px; }
+    & th.th-schule { width: 120px; }
+    & th.th-seite  { width: 45px; }
+    & td input { padding: 2px 3px; }
+    & td input[readonly] { color: #7a8b96; }
+    & td .zauber-schule-select {
+      width: 100%;
+      border: none;
+      background: transparent;
+      font-size: 10px;
+      font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      cursor: pointer;
+      padding: 1px 2px;
+    }
+  }
+
+  /* ── ZAUBER NOTIZ-TOGGLE (Checkbox-Hack, kein JS) ────── */
+
+  /* Versteckte Toggle-Checkboxen */
+  & input.zauber-notiz-toggle {
+    display: none;
+  }
+
+  /* Label als klickbarer Mini-Button */
+  & .zauber-notiz-btn {
+    display: inline-block;
+    margin-left: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1;
+    vertical-align: middle;
+    opacity: 0.4;
+    transition: opacity 0.15s;
+    user-select: none;
+  }
+  & .zauber-notiz-btn:hover {
+    opacity: 1;
+  }
+
+  /* Notizzeilen standardmäßig versteckt */
+  & .zauber-notizen-row {
+    display: none;
+  }
+  & .zauber-notiz-ta {
+    width: 100%;
+    min-height: 38px;
+    border: none;
+    background: #eef4f8;
+    padding: 3px 6px;
+    font-size: 10px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #2a3a44;
+    resize: vertical;
+  }
+  & .zauber-notiz-ta:focus {
+    outline: none;
+    background: #e4edf5;
+  }
+
+  /* Notizzeile einblenden wenn Checkbox gecheckt (Geschwister-Selektor) */
+  & input[name="attr_zauber_1_notizen_offen"]:checked  ~ table.zauber-list .zauber-notizen-row-1  { display: table-row; }
+  & input[name="attr_zauber_2_notizen_offen"]:checked  ~ table.zauber-list .zauber-notizen-row-2  { display: table-row; }
+  & input[name="attr_zauber_3_notizen_offen"]:checked  ~ table.zauber-list .zauber-notizen-row-3  { display: table-row; }
+  & input[name="attr_zauber_4_notizen_offen"]:checked  ~ table.zauber-list .zauber-notizen-row-4  { display: table-row; }
+  & input[name="attr_zauber_5_notizen_offen"]:checked  ~ table.zauber-list .zauber-notizen-row-5  { display: table-row; }
+  & input[name="attr_zauber_6_notizen_offen"]:checked  ~ table.zauber-list .zauber-notizen-row-6  { display: table-row; }
+  & input[name="attr_zauber_7_notizen_offen"]:checked  ~ table.zauber-list .zauber-notizen-row-7  { display: table-row; }
+  & input[name="attr_zauber_8_notizen_offen"]:checked  ~ table.zauber-list .zauber-notizen-row-8  { display: table-row; }
+  & input[name="attr_zauber_9_notizen_offen"]:checked  ~ table.zauber-list .zauber-notizen-row-9  { display: table-row; }
+  & input[name="attr_zauber_10_notizen_offen"]:checked ~ table.zauber-list .zauber-notizen-row-10 { display: table-row; }
+  & input[name="attr_zauber_11_notizen_offen"]:checked ~ table.zauber-list .zauber-notizen-row-11 { display: table-row; }
+  & input[name="attr_zauber_12_notizen_offen"]:checked ~ table.zauber-list .zauber-notizen-row-12 { display: table-row; }
+  & input[name="attr_zauber_13_notizen_offen"]:checked ~ table.zauber-list .zauber-notizen-row-13 { display: table-row; }
+  & input[name="attr_zauber_14_notizen_offen"]:checked ~ table.zauber-list .zauber-notizen-row-14 { display: table-row; }
+  & input[name="attr_zauber_15_notizen_offen"]:checked ~ table.zauber-list .zauber-notizen-row-15 { display: table-row; }
+  & input[name="attr_zauber_16_notizen_offen"]:checked ~ table.zauber-list .zauber-notizen-row-16 { display: table-row; }
+
+  & .beziehungen-table th.th-bez-name { width: 40%; }
+
+  & .ausrustung-table td {
+    height: 16px;
+
+    &.td-anzahl { width: 50px; }
+    & input { padding: 1px 4px; }
+  }
+
+  & .munzen-table {
+    margin-top: 6px;
+
+    & th { text-align: center; }
+    & td input { text-align: center; }
+  }
+
+  /* GEMEINSAME FELDER */
+  & textarea.field-ta {
+    width: 100%;
+    border: 0.5px solid #c0cdd6;
+    resize: none;
+    padding: 3px 5px;
+    background: #f3f7fa;
+  }
+
+  & .field-label {
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: #C4811C;
+  }
+
+  & .inline-field {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 4px;
+
+    &.inline-field--mb { margin-bottom: 5px; }
+    &.inline-field--mt { margin-top: 4px; }
+
+    & span {
+      font-size: 11px;
+      font-weight: bold;
+      white-space: nowrap;
+      color: #C4811C;
+    }
+
+    & input {
+      flex: 1;
+      border: none;
+      border-bottom: 1px solid #8aa0b0;
+      background: #f3f7fa;
+    }
+  }
+
+  & .winzige-label {
+    margin-top: 6px;
+    margin-bottom: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #C4811C;
+  }
+
+  & .input-tragkraft { max-width: 70px; }
+
+  /* HINTERGRUND-SEITE */
+  & .bg-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  & .grad-inner {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 8px;
+    align-items: center;
+  }
+
+  & .input-grad {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    border: none;
+    border-bottom: 2px solid #C4811C;
+    text-align: center;
+    background: #f3f7fa;
+    width: 100%;
+    color: #C4811C;
+  }
+
+  & .grad-xp-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+
+    & input {
+      border: none;
+      border-bottom: 1px solid #8aa0b0;
+      width: 100%;
+      text-align: center;
+      background: #f3f7fa;
+    }
+
+    & span {
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      color: #6a7a86;
+    }
+  }
+
+  & .xp-labels {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: 4px;
+    font-size: 9px;
+    color: #7a8b96;
+    margin-bottom: 2px;
+
+    & span { text-align: center; }
+  }
+
+  & .xp-erfahrung-label {
+    font-size: 9px;
+    color: #8a9aa6;
+    margin-top: 2px;
+  }
+
+  & .hintergrund-zwei-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 5px;
+  }
+
+  & .geschichte-wrap { margin-top: 5px; }
+
+  & .schicksalsmuenzen-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    padding: 4px 0 6px;
+    color: #C4811C;
+  }
+
+  & .input-schicksalsmuenzen {
+    width: 50px;
+    border: none;
+    border-bottom: 1px solid #C4811C;
+    font-size: 11px;
+    background: #f3f7fa;
+    text-align: center;
+  }
+
+  /* ZAUBER-SEITE */
+  & .zauber-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    align-items: start;
+    margin-bottom: 6px;
+  }
+
+  & .zauber-header-icon {
+    font-size: 36px;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", sans-serif;
+  }
+
+  & .zschule-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 8px;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  & .zauber-schule {
+    border: 0.5px solid #c0cdd6;
+    border-radius: 5px;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  & .zauber-schule-title {
+    background: #e8eef3;
+    padding: 2px 6px;
+    font-size: 10px;
+    font-weight: bold;
+    border-bottom: 0.5px solid #c0cdd6;
+    color: #3a4a55;
+  }
+
+  & .zauber-schule-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 6px;
+    font-size: 10px;
+    border-bottom: 0.5px solid #e8edf0;
+    overflow: hidden;
+
+    & > span:first-child {
+      flex-shrink: 0;
+      width: 16px;
+      color: #7a8b96;
+      font-size: 9px;
+    }
+
+    & input {
+      flex: unset !important;
+      min-width: 0;
+      border: none;
+      border-bottom: 1px solid #c0cdd6;
+      background: #f3f7fa;
+    }
+
+    &.zauber-schule-item--stack {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 4px;
+      padding: 6px;
+
+      & .zschule-wert-ta {
+        width: 100%;
+        border: 1px solid #c0cdd6;
+        border-radius: 3px;
+        background: #f3f7fa;
+        font-size: 10px;
+        resize: none;
+        height: 48px;
+        padding: 3px 5px;
+      }
+    }
+  }
+
+  & .zschule-name-row {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  & .zschule-name-input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #c0cdd6;
+    border-radius: 3px;
+    background: #f3f7fa;
+    padding: 2px 5px;
+    font-size: 10px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    cursor: pointer;
+  }
+
+  & .zschule-stufe-input {
+    flex: 0 0 32px;
+    width: 32px;
+    border: 1px solid #c0cdd6;
+    border-radius: 3px;
+    background: #f3f7fa;
+    padding: 2px 3px;
+    font-size: 10px;
+    text-align: center;
+  }
+}
+
+/* Tab-Aktivierung */
+#sheet-tab1:checked ~ #sheet-page1,
+#sheet-tab2:checked ~ #sheet-page2,
+#sheet-tab3:checked ~ #sheet-page3,
+#sheet-tab4:checked ~ #sheet-page4,
+#sheet-tab5:checked ~ #sheet-page5 { display: block; }
+
+#m6body #sheet-tab1:checked ~ .sheet-tabs-row label[for='sheet-tab1'],
+#m6body #sheet-tab2:checked ~ .sheet-tabs-row label[for='sheet-tab2'],
+#m6body #sheet-tab3:checked ~ .sheet-tabs-row label[for='sheet-tab3'],
+#m6body #sheet-tab4:checked ~ .sheet-tabs-row label[for='sheet-tab4'],
+#m6body #sheet-tab5:checked ~ .sheet-tabs-row label[for='sheet-tab5'] {
+  background: #fff;
+  color: #C4811C;
+  border-color: #b8c8d4;
+  font-weight: bold;
+}
+
+/* ── NPC-Tab Label: eigene Farbe ── */
+#m6body .sheet-tab-label--npc {
+  color: #7a5090;
+}
+#m6body #sheet-tab5:checked ~ .sheet-tabs-row label[for='sheet-tab5'] {
+  color: #7a5090 !important;
+}
+
+/* ── NPC-Modus Auto-Open: wenn Checkbox aktiv, immer page5 zeigen ── */
+/* Der hidden .npc-mode-trigger Checkbox sitzt als Sibling vor allen Pages */
+#m6body input.npc-mode-trigger { display: none; }
+
+#m6body input.npc-mode-trigger:checked ~ #sheet-page1,
+#m6body input.npc-mode-trigger:checked ~ #sheet-page2,
+#m6body input.npc-mode-trigger:checked ~ #sheet-page3,
+#m6body input.npc-mode-trigger:checked ~ #sheet-page4 { display: none !important; }
+
+#m6body input.npc-mode-trigger:checked ~ #sheet-page5 { display: block !important; }
+
+
+/* ═══════════════════════════════════════════════════════
+   MIDGARD 6 — WÜRFELBUTTONS, VN-BAR, DICE-ANIMATION
+   ═══════════════════════════════════════════════════════ */
+
+#m6body {
+
+  /* ── Würfelbutton Basis ── */
+  & .dice-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-size: 0;
+    overflow: visible;
+
+    &::before {
+      content: '\1F3B2';
+      font-size: 15px;
+      line-height: 1;
+      filter: grayscale(0.6) opacity(0.45);
+      transition: filter 0.2s;
+    }
+
+    &:hover::before {
+      filter: grayscale(0) opacity(1) drop-shadow(0 0 2px rgba(196,129,28,0.5));
+      animation: m6diceBounce 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+    }
+
+    &:active::before {
+      transform: scale(0.85);
+    }
+  }
+
+  /* Schaden-Button */
+  & .dmg-btn {
+    background: transparent;
+    border: none;
+
+    &::before { content: '\1F4A5'; }
+  }
+
+
+  /* ── VN-Bar: Pill-Stil — Midgard theme ── */
+  & .vn-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    border: 1.5px solid #b8c8d4;
+    border-radius: 6px;
+    background: linear-gradient(to right, #e2eaf0 0%, #d6e1e9 40%, #c8d6e0 100%);
+    border-left: 4px solid #C4811C;
+    border-bottom: none;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  & .vn-bar-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.04em;
+    color: #C4811C;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    & .vn-dice-icon { color: #C4811C; }
+  }
+
+  /* Radio-Inputs verstecken */
+  & .vn-radio { display: none; }
+
+  & .vn-pills {
+    display: flex;
+    align-items: center;
+    border: 1px solid #b8c8d4;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f3f7fa;
+  }
+
+  & .vn-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 13px;
+    font-size: 10px;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    cursor: pointer;
+    border-right: 1px solid #b8c8d4;
+    background: transparent;
+    color: #4a5a66;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+    user-select: none;
+
+    &:last-of-type { border-right: none; }
+    &:hover { background: rgba(196,129,28,0.08); }
+  }
+
+  /* ── Fertigkeitszeile: 3 Spalten ── */
+  & .fert-item {
+    display: grid;
+    grid-template-columns: 1fr 28px 22px;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 2px;
+    font-size: 10px;
+
+    & span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      min-width: 0;
+    }
+
+    & input {
+      width: 28px;
+      border: none;
+      border-bottom: 1px solid #a0b5c2;
+      text-align: center;
+      background: #f3f7fa;
+      padding: 1px 2px;
+    }
+  }
+
+  /* ── Waffentabelle Extra-Spalten ── */
+  & table.waffen {
+    & th.th-roll {
+      width: 24px;
+      text-align: center;
+      font-size: 8px;
+      color: #8a9aa6;
+    }
+    & td:nth-last-child(-n+2) { text-align: center; padding: 1px 2px; }
+  }
+
+  /* ── Zauberliste Extra-Spalten ── */
+  & table.zauber-list {
+    & th.th-zroll {
+      width: 24px;
+      text-align: center;
+      font-size: 8px;
+      color: #8a9aa6;
+    }
+    & td:nth-last-child(-n+2) { text-align: center; padding: 1px 2px; }
+  }
+
+  /* ── Zauberschule Item ── */
+  & .zauber-schule-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 6px;
+    font-size: 10px;
+    border-bottom: 0.5px solid #e8edf0;
+
+    & > span:first-child { flex-shrink: 0; width: 16px; color: #7a8b96; font-size: 9px; }
+    & input { flex: 1; min-width: 0; border: none; border-bottom: 1px solid #c0cdd6; background: #f3f7fa; }
+    & .zschule-wert-input { flex: 0 0 32px; max-width: 32px; text-align: center; }
+  }
+
+}
+
+/* ── VN-Radio :checked → Hervorhebung ── */
+/* Nachteil aktiv */
+#m6body .vn-radio#vn_nachteil:checked + label.vn-pill-nachteil {
+  background: #d94000 !important;
+  color: #fff !important;
+}
+/* Normal aktiv */
+#m6body .vn-radio#vn_normal:checked + label.vn-pill-normal {
+  background: #C4811C !important;
+  color: #fff !important;
+}
+/* Vorteil aktiv */
+#m6body .vn-radio#vn_vorteil:checked + label.vn-pill-vorteil {
+  background: #5a9e2a !important;
+  color: #fff !important;
+}
+
+/* ── Roll20 Chat-Template ── */
+.sheet-rolltemplate-default table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 0 !important;
+}
+.sheet-rolltemplate-default tbody td,
+.sheet-rolltemplate-default .sheet-template-title {
+  text-align: center !important;
+}
+.sheet-rolltemplate-default tbody tr td:first-child {
+  font-weight: bold;
+  color: #C4811C;
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   LP / AP / RESISTENZEN
+   ═══════════════════════════════════════════════════════ */
+
+#m6body {
+
+  & .lp-ap-grid {
+    width: 100%;
+    border: 1.5px solid #b8c8d4;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 6px;
+
+    & .lp-ap-header-row {
+      display: grid;
+      grid-template-columns: 2fr 2fr 3fr;
+      background: linear-gradient(to right, #e2eaf0 0%, #d0dce5 40%, #bccdd8 100%);
+    }
+
+    & .lp-ap-th {
+      border-bottom: 1px solid #b8c8d4;
+      padding: 3px 8px;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      color: #C4811C;
+    }
+    & .lp-ap-th-lp  { text-align: left; border-left: 4px solid #C4811C; }
+    & .lp-ap-th-ap  { text-align: center; }
+    & .lp-ap-th-res { text-align: right; }
+
+    & .lp-ap-content {
+      display: grid;
+      grid-template-columns: auto 1fr auto 1fr auto;
+      background: #fff;
+    }
+
+    & .lp-ap-td {
+      padding: 4px 6px;
+      font-size: 10px;
+    }
+
+    & .lp-ap-td-divider { border-right: 1px solid #b8c8d4; }
+
+    & .lp-ap-checks {
+      white-space: nowrap;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      & .cb-row { margin-bottom: 2px; }
+    }
+
+    & .lp-ap-vals {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      white-space: nowrap;
+    }
+
+    & .lp-ap-input {
+      width: 34px;
+      border: none;
+      border-bottom: 1px solid #8aa0b0;
+      text-align: center;
+      font-size: 11px;
+      padding: 1px 2px;
+    }
+
+    & .lp-ap-sep { font-size: 11px; color: #8a9aa6; }
+
+    & .lp-ap-resistenzen {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & .lp-ap-icon-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    & .lp-ap-icon-cell {
+      text-align: center;
+      font-size: 16px;
+      font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", sans-serif;
+      padding: 4px 6px 1px;
+    }
+
+    & .lp-ap-fert-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    & .lp-ap-fert-cell {
+      padding: 1px 6px 4px;
+    }
+  }
+
+}
+
+
+/* ── Ausgelagerte Inline-Styles ── */
+
+/* LP/AP Tabelle: Header-Zeile Hintergrund */
+/* LP/AP header background is now in .lp-ap-grid .lp-ap-header-row above */
+
+/* LP/AP max-Felder: transparenter Hintergrund */
+#m6body .lp-ap-grid .lp-ap-input--transparent {
+  background-color: transparent;
+}
+
+/* Zaubern-Fertigkeit: kompaktes Eingabefeld */
+#m6body .fert-zaubern-input {
+  flex: unset !important;
+  width: 35px;
+  text-align: center;
+}
+
+/* Zaubern-Header: readonly-wrap nicht ausdehnen */
+#m6body .zauber-header .readonly-wrap:has(.fert-zaubern-input) {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+/* ── section-block--mb helper ── */
+#m6body .section-block--mb {
+  margin-bottom: 8px;
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   NPC-TAB
+   ═══════════════════════════════════════════════════════ */
+
+#m6body {
+
+  /* ── NPC-Modus Bar ── */
+  & .npc-modus-bar {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #f0ebf8, #e8e0f4);
+    border: 1.5px solid #c5b0dc;
+    border-radius: 6px;
+    padding: 7px 12px;
+    margin-bottom: 8px;
+  }
+
+  & .npc-modus-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #5a3a7a;
+    user-select: none;
+
+    & input[type=checkbox] {
+      width: 16px;
+      height: 16px;
+      accent-color: #7a5090;
+      flex-shrink: 0;
+    }
+  }
+
+  /* ── NPC Übersicht ── */
+  & .npc-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  & .npc-name-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  & .npc-label {
+    font-weight: bold;
+    font-size: 11px;
+    color: #C4811C;
+    white-space: nowrap;
+  }
+
+  & .npc-name-input {
+    flex: 1;
+    border: none;
+    border-bottom: 1px solid #8aa0b0;
+    padding: 2px 4px;
+    background: #f3f7fa;
+    font-size: 13px;
+  }
+
+  & .npc-pools-row {
+    display: flex;
+    border: 1px solid #b8c8d4;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  & .npc-pool-block {
+    flex: 1;
+    padding: 6px 10px;
+  }
+
+  & .npc-pool-lp {
+    background: #eef2f8;
+    border-right: 1px solid #b8c8d4;
+  }
+
+  & .npc-pool-ap {
+    background: #eef2f8;
+  }
+
+  & .npc-pool-title {
+    font-family: 'Georgia', serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #C4811C;
+    margin-right: 4px;
+    display: inline;
+  }
+
+  & .npc-pool-vals {
+    display: inline;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  & .npc-pool-input {
+    width: 38px;
+    border: none;
+    border-bottom: 1px solid #8aa0b0;
+    text-align: center;
+    font-size: 13px;
+    padding: 1px 2px;
+    background: transparent;
+  }
+
+  & .npc-pool-sep { font-size: 13px; color: #8a9aa6; }
+  & .npc-pool-unit { font-size: 10px; color: #8a9aa6; }
+
+  /* ── NPC Schnellwürfe ── */
+  & .npc-roll-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 0;
+    border-bottom: 0.5px solid #e8edf0;
+
+    &:last-of-type { border-bottom: none; }
+  }
+
+  & .npc-roll-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    background: linear-gradient(to bottom, #dce8f0, #c8d8e4);
+    border: 1px solid #a0bace;
+    border-radius: 10px;
+    font-size: 9px;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    color: #3a5a6a;
+    white-space: nowrap;
+    min-width: 40px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  & .npc-roll-name {
+    flex: 1;
+    border: none;
+    border-bottom: 1px solid #8aa0b0;
+    padding: 2px 4px;
+    background: #f3f7fa;
+    font-size: 11px;
+  }
+
+  & .npc-roll-wert {
+    width: 40px;
+    border: none;
+    border-bottom: 1px solid #8aa0b0;
+    text-align: center;
+    padding: 2px;
+    background: #f3f7fa;
+    font-size: 11px;
+  }
+
+  & .npc-roll-hint {
+    margin-top: 6px;
+    font-size: 9px;
+    color: #9aaab4;
+    font-style: italic;
+  }
+
+  /* ── NPC Notizen zweispaltig ── */
+  & .npc-notizen-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  & .npc-notiz-title {
+    font-family: 'Georgia', serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #C4811C;
+    margin-bottom: 4px;
+  }
+
+  & .npc-notiz-ta {
+    width: 100%;
+    resize: none;
+    border: 1px solid #c0cdd6;
+    border-radius: 4px;
+    padding: 5px 6px;
+    background: #f3f7fa;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  & .npc-notiz-ta:focus {
+    outline: none;
+    border-color: #8aa0b0;
+    background: #fff;
+  }
+
+}
