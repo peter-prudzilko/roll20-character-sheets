@@ -1,0 +1,23 @@
+{
+	"html": "Midgard6_Fanedition_dieUmstuermten.html",
+	"css": "Midgard6_Fanedition_dieUmstuermten.css",
+	"authors": "Peter P.",
+	"roll20userid": "6029190",
+	"preview": "preview.png",
+	"instructions": "Charakterbogen f&uuml;r **Midgard 6 - Die Umst&uuml;rmten - Fanediton**",
+	"useroptions": [
+		{
+			"attribute": "wurf_modus",
+			"displayname": "Standard-W&uuml;rfelmodus",
+			"type": "select",
+			"options": [
+				"Normal|1d20",
+				"Vorteil|{1d20,1d20}k1",
+				"Nachteil|{1d20,1d20}kl1"
+			],
+			"default": "1d20",
+			"description": "Der Standard-W&uuml;rfelmodus f&uuml;r neu erstellte Charaktere."
+		}
+	],
+	"legacy": false
+}
